@@ -1,0 +1,129 @@
+@import "../../../../assets/scss/abstracts/abstracts.scss";
+
+.all-mandate-page {
+  padding: 20px;
+  .create-mandate-popup {
+    .scroll-mandate {
+      max-width: 500px;
+      margin: 0 auto;
+      .normal-input-section {
+        margin-top: 10px;
+      }
+      label {
+        font-size: 18px;
+        color: #828282;
+      }
+    }
+    .title {
+      font-weight: bold;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      color: #ed1f24;
+      text-align: center;
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+
+    // custom checkbox
+
+    .mandate-radio-container {
+      display: flex;
+      padding: 10px 0px;
+      .HightlightRadioBtn span {
+        color: $green;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+      }
+      // .custom-radio-button span {
+      //   color: red;
+      // }
+    }
+
+    // bank details
+
+    .mandates-bank-details {
+      padding: 10px 0px;
+      .mandate-select-title {
+        margin-bottom: 20px;
+        span {
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: $black;
+          padding: 10px 0px;
+        }
+      }
+
+      .mandate-bank-data {
+        display: flex;
+        padding-bottom: 15px;
+
+        .custom-radio-button {
+          margin: 0px;
+        }
+        .custom-checkbox {
+          align-items: unset;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .bank-details-parent {
+          padding-left: 15px;
+        }
+        .bank-title-normal {
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #828282;
+        }
+        .bank-title-bold {
+          font-weight: 600;
+        }
+        .bank-defalut-higlight {
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 22px;
+          color: #f49d37;
+          padding-left: 30px;
+        }
+      }
+    }
+
+    .mandate-btn-container {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      .create-btn-wrap {
+        width: 200px;
+        height: 40px;
+        background: $primary-color;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+      .mandate-help-btn {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: $primary-color;
+        padding-left: 30px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

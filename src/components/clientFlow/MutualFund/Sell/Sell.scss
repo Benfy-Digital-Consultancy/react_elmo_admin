@@ -1,0 +1,215 @@
+@import "../../../../assets/scss/abstracts/abstracts.scss";
+
+.sell-investment {
+  h2 {
+    font-weight: 600;
+    font-size: 18px;
+    color: $grey;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 16px;
+    color: $grey;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .page-content {
+    padding: 22px;
+    margin: 0;
+  }
+
+  // sell-header
+  .sell-header-width {
+    .sell-header-flex {
+      .title {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+      }
+      .label {
+        color: $grey;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.sell-investment {
+  .information-popup {
+    .popup-content {
+      max-width: 600px;
+      .popup-scroll-content {
+        padding: 40px;
+      }
+    }
+    .info-popup-title {
+      font-weight: normal;
+      font-size: 24px;
+      color: $danger;
+      font-family: "Playfair Display", serif;
+      margin-bottom: 32px;
+      line-height: 32px;
+      text-align: center;
+    }
+    .info-popup-subtitle {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: $black;
+      line-height: 24px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      color: $grey;
+      margin-bottom: 20px;
+      line-height: 21px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .questionarie-popup {
+    .popup-content {
+      max-width: 600px;
+      .popup-scroll-content {
+        padding: 40px;
+      }
+    }
+  }
+
+  .popup-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: $black;
+  }
+}
+.sell-investment {
+  .sell-bankaccount-details {
+    background: #eef3ff;
+    padding: 20px 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    .sell-bankaccount-ttile {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: $black;
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      margin-bottom: 20px;
+    }
+    .sell-bank-details {
+      display: flex;
+      justify-content: space-between;
+      .label {
+        color: $grey;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        line-height: 22px;
+      }
+      .value {
+        color: $black;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        line-height: 22px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .disabled {
+    opacity: 0.5;
+  }
+}
+.popup-box-sell-page {
+  border: 1px solid #c4c4c4;
+  padding: 16px 22px;
+  border-radius: 8px;
+  .box-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: $grey;
+    padding-bottom: 5px;
+    line-height: 22px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+    label {
+      font-weight: 500;
+      font-size: 14px;
+      margin-left: 20px;
+      strong {
+        font-weight: 500;
+        margin-right: 10px;
+      }
+    }
+  }
+  .sell-type,
+  span {
+    color: $black;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .label {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $grey;
+  }
+  .lablepadding {
+    padding-left: 10px;
+  }
+}
+
+// sell tab section
+.sell-investment-tab-wrap {
+  display: flex;
+  flex-direction: row;
+  .sell-investment-width {
+    width: 50%;
+  }
+  .sell-invesemnt-title {
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 0;
+    background-color: $white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .sell-invesemnt-title-border {
+    height: 5px;
+    width: 230px;
+    background-color: $danger;
+  }
+  .sell-invesemnt-title-border-transparent {
+    height: 5px;
+    width: 230px;
+    background-color: transparent;
+  }
+}

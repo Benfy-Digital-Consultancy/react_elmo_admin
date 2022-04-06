@@ -1,0 +1,189 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+.side-bar {
+  max-width: 225px;
+  width: 100%;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.05);
+  height: 100vh;
+  margin-top: -100px;
+  background: $white;
+  position: relative;
+  z-index: 2;
+
+  .btn-primary {
+    color: $gray-sideBar !important;
+    background-color: $white !important;
+    border-color: $white !important;
+    margin-left: 6px !important;
+    font-size: 18px !important;
+  }
+  .kyc-content.kyc-break {
+    display: block;
+    span.info {
+      position: absolute;
+      top: 0;
+      right: 16px;
+    }
+  }
+  .logout-popup-modal {
+    .popup-content {
+      max-width: 400px;
+      text-align: center;
+      .popup-title {
+        font-weight: normal;
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-family: "Playfair Display", serif;
+        color: $danger;
+      }
+      .popup-description {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 14px;
+        color: $grey;
+      }
+      .logout-btn-container {
+        justify-content: center;
+        align-items: center;
+      }
+      .cancel-btn-width {
+        width: 100px;
+        margin-right: 10px;
+      }
+      .primary-btn {
+        min-width: 100px;
+        margin: 0 10px;
+        height: 40px;
+      }
+    }
+  }
+
+  .logo {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  .logo img {
+    max-width: 133px;
+  }
+  //scroll bar css - Ashwin
+  .scroll-content {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .scroll-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scroll-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+  }
+  .scroll-content::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #666565;
+  }
+  .user-details {
+    padding: 0px 20px 5px 20px;
+  }
+  .user-details .user-name {
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .user-details .user-code {
+    font-weight: 500;
+    font-size: 14px;
+    color: $grey;
+  }
+  .menu-list {
+    padding-top: 20px;
+  }
+  .menu-list a {
+    display: flex;
+    border-left: 6px solid transparent;
+    text-decoration: none;
+    padding: 12px 0;
+    padding-left: 17px;
+    padding-right: 20px;
+    color: $gray-sideBar;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .menu-list a:hover,
+  .menu-list a.active {
+    color: $green;
+    border-left: 6px solid $green;
+    background: #22db3b33;
+    font-weight: 500;
+  }
+  .menu-list a img {
+    margin-left: auto;
+  }
+
+  .kyc-content {
+    padding: 0px 20px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    p {
+      margin: 3px 0px;
+      color: $grey;
+      font-weight: 500;
+      font-size: 14px;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  .kyc-status {
+    justify-content: start;
+    p {
+      padding-right: 12px;
+    }
+    .info {
+      position: absolute;
+      right: 12px;
+      top: 3px;
+    }
+  }
+  .confirm-popup {
+    button {
+      min-width: 110px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $grey;
+      border-radius: 8px;
+    }
+    button.primary-btn {
+      color: $white;
+    }
+    .popup .popup-content {
+      width: 35%;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: $grey;
+      text-align: justify;
+      width: 85%;
+      margin: 0px auto;
+      padding-right: 30px;
+      padding-bottom: 45px;
+    }
+    h5 {
+      color: $danger;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 15px 0px;
+      margin: 0;
+      padding-bottom: 25px;
+    }
+  }
+  .tick-img {
+    height: 18px;
+    width: 18px;
+  }
+}

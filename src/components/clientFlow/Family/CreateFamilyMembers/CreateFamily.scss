@@ -1,0 +1,84 @@
+.client-create-page {
+  padding-top: 20px;
+  .page-content {
+    padding-left: 66px;
+    padding-bottom: 40px;
+  }
+  .page-form {
+    .form-header {
+      font-weight: 600;
+      font-size: 18px;
+      color: #f49d37;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 19px;
+        z-index: 0;
+        border-bottom: 1px solid #bdbdbd;
+      }
+      span {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        background-color: #fafafa;
+        padding-right: 20px;
+      }
+      img {
+        padding: 8px;
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        background: rgba(244, 157, 55, 0.46);
+        border-radius: 50%;
+        margin-right: 14px;
+      }
+    }
+    .input-section {
+      padding-left: 46px;
+      padding-bottom: 40px;
+      .inputs-title {
+        width: 100%;
+        h6 {
+          font-weight: 500;
+          font-size: 24px;
+          color: #ed1f24;
+          margin: 30px 0;
+        }
+      }
+      .side-heading {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #828282;
+        margin-bottom: 20px;
+      }
+    }
+    .button-section {
+      text-align: right;
+      .primary-btn {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.bank_account_border {
+  margin: 15px 0;
+  border-top: 1px solid #828282;
+}
+.blank {
+  border-top: 2px solid black;
+  width: 25%;
+  margin-bottom: 12px;
+  margin-top: 50px;
+}
+#client-create-page-input input::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -1,0 +1,61 @@
+@import "assets/scss/abstracts/abstracts.scss";
+.view-report-page {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 60px;
+  cursor: pointer;
+  .list {
+    padding: 0 10px;
+    margin-bottom: 20px;
+    flex: 0 0 33.3333%;
+    .box {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background: $white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      min-height: 164px;
+      img {
+        margin-bottom: 10px;
+      }
+      .current-title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      .description {
+        font-weight: 500;
+        font-size: 14px;
+        color: $grey;
+      }
+      .for-active {
+        display: none;
+      }
+    }
+    &:hover{
+      .box {
+        background: $primary-color;
+        color: $white;
+        .current-title {
+          color: $common-white;
+        }
+        .description {
+          color: $white;
+        }
+        .non-active {
+          display: none;
+        }
+        .for-active {
+          display: block;
+        }
+      }
+    }
+  }
+  
+}

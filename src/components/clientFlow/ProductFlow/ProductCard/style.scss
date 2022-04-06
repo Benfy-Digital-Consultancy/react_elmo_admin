@@ -1,0 +1,38 @@
+@import "../../../../assets/scss/abstracts/abstracts.scss";
+.product-card {
+  background-color: $white;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  .product-title {
+    color: $black;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .product-subtitle {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: $grey;
+  }
+  .rate-of-interest {
+    width: 20%;
+    h4 {
+      font-style: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: $grey;
+    }
+    p {
+      font-style: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: $grey;
+    }
+  }
+  .border-right {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

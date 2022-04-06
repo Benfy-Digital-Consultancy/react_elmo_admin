@@ -1,0 +1,32 @@
+@import "../../../../assets/scss/abstracts/abstracts.scss";
+
+.success-popup {
+  .popup {
+    .popup-content {
+      max-width: 920px;
+    }
+  }
+}
+.sell-success {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  .popup-box-sell-page {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  .sell-success-title {
+    color: $green;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .sell-success-content {
+    font-weight: 500;
+    font-size: 14px;
+    color: $grey;
+    margin-bottom: 30px;
+    max-width: 450px;
+    width: 100%;
+  }
+}

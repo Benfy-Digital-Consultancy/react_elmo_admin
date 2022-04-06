@@ -1,0 +1,62 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+
+.normal-input-section {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  label {
+    color: $grey;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .sub-label {
+    color: $grey;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .with-input-label {
+    position: relative;
+    z-index: 1;
+    input {
+      padding-left: 36px;
+    }
+    .input-label {
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      font-weight: 500;
+      color: $grey;
+    }
+  }
+  input {
+    width: 100%;
+    border: 1px solid $gray-sideBar;
+    height: 40px;
+    border-radius: 8px;
+    background: transparent;
+    padding: 0 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    outline: 0;
+    font-size: 16px;
+    color: $grey;
+    &::placeholder {
+      color: $grey;
+    }
+    &:focus {
+      box-shadow: 0 0;
+      border: 1px solid $gray-sideBar;
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

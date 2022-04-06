@@ -1,0 +1,90 @@
+@import "assets/scss/abstracts/abstracts.scss";
+.view-report-view {
+    margin: 12px;
+    .reportId-div{
+        margin: 12px;
+    }
+    .btn-generate{
+        position: relative;
+        top: 36px;
+    }
+    .btn-generate-four{
+        position: relative;
+        top: 18px
+    }
+    .excel-pdf{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        .excel-img{
+            position: relative;
+        top: 8px;
+        margin-right: 14px;
+        }
+    }
+    .search-section {
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 10px;
+        position: relative;
+        z-index: 2;
+        > div {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+     
+        .button-input {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 42px;
+            .button-fontsize
+            {
+                font-size: 18px;
+            }
+        }
+
+    }
+
+    .table-block {
+        margin-bottom: 40px;
+        table {
+            width: 100%;
+            th {
+                background: $table-grey;
+                font-weight: 600;
+                font-size: 16px;
+                color: $secondary-color;
+                padding: 10px;
+                img {
+                    width: 18px;
+                    margin-left: 10px;
+                }
+            }
+            td {
+                padding: 20px 10px;
+                font-weight: 500;
+                font-size: 14px;
+                color: $grey-65;
+                border: 1px solid rgba(0, 0, 0, 0.25);
+                &.primary-color {
+                    color: $primary-color;
+                    
+                }
+            }
+            .empty-height {
+                th {
+                    height: 6px;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                }
+                td {
+                    height: 6px;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

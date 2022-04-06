@@ -1,0 +1,215 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+.scheme-details-edit {
+  padding: 20px;
+
+  .invest-folionumber {
+    padding-top: 24px;
+    // padding-bottom: 60px;
+    padding-bottom: 20px;
+  }
+  .current-page-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    .scheme-details-first-title {
+      color: #ed1f24;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      img {
+        margin: 0 16px;
+      }
+      a {
+        color: inherit;
+      }
+    }
+    .right {
+      margin-left: auto;
+      font-weight: 600;
+      font-size: 16px;
+      color: $black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .title_width {
+    width: 95%;
+
+    .title {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: $black;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      .right {
+        margin-left: auto;
+        img {
+          margin-left: 30px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .sub-title {
+    display: flex;
+    .sub-title-firstheading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      color: #828282;
+    }
+    .sub-title-secondheading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+      color: #828282;
+    }
+    .sub-title-margin {
+      padding-left: 30px;
+    }
+  }
+
+  .box {
+    padding: 10px;
+  }
+  .mandate-details {
+    .mandate-title {
+      padding-top: 30px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 24px;
+      color: #828282;
+      margin-bottom: 20px;
+      img {
+        margin-left: 24px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .button-div {
+        margin-left: auto;
+        .create-mandate {
+          font-weight: 600;
+          border-radius: 8px;
+          height: 40px;
+          width: 215px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .mandate-details {
+    .css-tlfecz-indicatorContainer {
+      padding: 11px;
+      // display: unset;
+      background-color: #f4f4f4;
+    }
+    .css-qc6sy-singleValue {
+      margin: 0px;
+    }
+    .css-319lph-ValueContainer {
+      padding: 0;
+    }
+    .css-1okebmr-indicatorSeparator {
+      display: none;
+    }
+    .css-1hb7zxy-IndicatorsContainer {
+      align-items: flex-start;
+    }
+    .css-1d8n9bt {
+      padding: 0px;
+    }
+    .css-1wy0on6 {
+      align-items: flex-start;
+    }
+    .css-tj5bde-Svg {
+      height: 32px;
+      width: 32px;
+    }
+    .css-8mmkcg {
+      height: 32px;
+      width: 32px;
+    }
+
+    .mandate-list-dropdown:hover {
+      cursor: pointer;
+    }
+  }
+
+  .oneTime-sellContainer {
+    padding-top: 10px;
+    .sellContainer-radio {
+      padding-top: 10px;
+    }
+  }
+}
+
+.mandate-box {
+  .mandate-box-header {
+    padding: 10px 20px;
+    background: #f4f4f4;
+    border-radius: 3.45329px;
+    display: flex;
+    align-items: center;
+    .primary {
+      font-weight: 600;
+      font-size: 18px;
+      color: $primary-color;
+      margin-right: 40px;
+    }
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      color: #828282;
+      padding-right: 10px;
+    }
+    strong {
+      font-weight: 500;
+      font-size: 14px;
+      color: #828282;
+    }
+    .right {
+      margin-left: auto;
+      img {
+        width: 20px;
+      }
+    }
+  }
+  .mandate-box-content {
+    padding: 20px;
+    color: #828282;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .list {
+      flex: 0 0 33%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .label {
+        width: 150px;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      .value {
+        font-weight: 500;
+        font-size: 14px;
+      }
+      &.size-sm {
+        .label {
+          width: 60px;
+        }
+      }
+    }
+  }
+}

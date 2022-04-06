@@ -1,0 +1,22 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+.bread-crumbs {
+  .ant-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .opacity-8 {
+      opacity: 0.8;
+    }
+    .bread-crumbs-label {
+      color: $danger;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      line-height: 22px;
+    }
+    .ant-breadcrumb-separator {
+      font-size: 24px;
+      margin: 0 12px;
+      color: $danger;
+    }
+  }
+}

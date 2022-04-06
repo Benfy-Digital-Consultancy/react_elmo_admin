@@ -1,0 +1,199 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+
+.view-order-page {
+  padding: 0 20px;
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    > div {
+      text-decoration: underline;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .left {
+      color: $green;
+    }
+    .right {
+      color: $primary-color;
+    }
+  }
+  .list-outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    &.w-100 {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: initial;
+    }
+    .list {
+      display: flex;
+      align-items: flex-start;
+      font-weight: 500;
+      font-size: 14px;
+      color: #828282;
+      margin-bottom: 10px;
+      .label {
+        width: 50%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        opacity: 0.9;
+      }
+      .value {
+        font-weight: 500;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 21px;
+        opacity: 0.9;
+      }
+    }
+    &.col-4 {
+      .list {
+        width: 25%;
+      }
+    }
+    &.col-3 {
+      .list {
+        width: 33.333%;
+      }
+    }
+    &.col-2 {
+      .list {
+        width: 50%;
+      }
+    }
+  }
+  .box-list-section {
+    padding-bottom: 30px;
+    .box {
+      border-radius: 3.45329px;
+      padding: 20px;
+      .box-title {
+        display: flex;
+        margin-bottom: 6px;
+        align-items: center;
+        strong {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 27px;
+          color: $black;
+          opacity: 0.9;
+          margin-right: 40px;
+        }
+        span {
+          font-size: 14px;
+          color: $black;
+          font-weight: 500;
+          line-height: 21px;
+          opacity: 0.9;
+        }
+        .right {
+          margin-left: auto;
+          span {
+            font-size: 14px;
+            color: $green;
+            padding: 0 10px;
+          }
+          .red-color {
+            color: #ff4d4f;
+          }
+        }
+      }
+      .box-subtitle {
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #828282;
+        span {
+          margin-right: 40px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 21px;
+          opacity: 0.9;
+          color: #828282;
+        }
+      }
+    }
+    .box-content {
+      .center {
+        flex: 1;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        color: $green;
+      }
+      .right {
+        font-weight: 600;
+        font-size: 18px;
+        color: $primary-color;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .bottom-div {
+        color: #828282;
+        font-weight: 500;
+        font-size: 14px;
+        padding-top: 6px;
+        span {
+          color: #f49d37;
+          font-weight: 600;
+        }
+      }
+      .grey-color {
+        color: #828282 !important;
+      }
+    }
+    .status-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .ant-card-bordered {
+      border: unset !important;
+      box-shadow: 0px 0px 3.45329px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+.grey-bg {
+  background-color: #fbfbfb;
+}
+.rmvieworder-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .cut-title {
+    color: $green;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-decoration: underline;
+  }
+  .rmvieworder-placholder {
+    font-weight: 500;
+    font-size: 14px;
+    color: #828282;
+    outline: 0;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px;
+    padding-left: 40px;
+    margin-right: 20px;
+    background-color: #fafafa;
+  }
+  .rmvieworder-placholder::placeholder {
+    color: #828282;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+}

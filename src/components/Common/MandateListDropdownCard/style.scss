@@ -1,0 +1,21 @@
+.app-back {
+  .content-title {
+    padding: 0 32px;
+    color: #ed1f24;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    span {
+      padding-left: 32px;
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.investment-calculator-popup {
+  .title {
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    color: #ed1f24;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .border-right {
+    border-right: 1px solid #bdbdbd;
+    height: 100%;
+    margin: 0 auto;
+    width: 1px;
+  }
+  .investment-calculator-dropdown {
+    margin-top: 3px;
+  }
+  .popup-data {
+    display: flex;
+    align-items: center;
+    .calculated-amount {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #2a468d;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      strong {
+        font-weight: 500;
+        font-size: 36px;
+        display: block;
+        white-space: nowrap;
+      }
+      span {
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+}

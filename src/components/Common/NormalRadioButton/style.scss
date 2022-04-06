@@ -1,0 +1,43 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+
+.custom-radio-button {
+  margin: 0 24px 0px 0px;
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #686868;
+  }
+
+  .ant-radio {
+    height: 20px;
+  }
+  label:hover .ant-radio-inner {
+    border-color: $green;
+  }
+  .ant-radio-wrapper:hover .ant-radio,
+  .ant-radio:hover .ant-radio-inner,
+  .ant-radio-input:focus + .ant-radio-inner,
+  .ant-radio-checked .ant-radio-inner {
+    border-color: $green;
+  }
+  .ant-radio-inner {
+    display: inline-block;
+    min-width: 20px;
+    height: 20px;
+    border-width: 5px;
+    border-color: $gray-sideBar;
+    &::after {
+      display: inline-block;
+      min-width: 20px;
+      height: 20px;
+      background-color: transparent;
+    }
+  }
+  .ant-radio-checked::after {
+    border: 5px solid $green;
+  }
+  .ant-radio-disabled .ant-radio-inner::after {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../../assets/scss/abstracts/abstracts.scss";
+
+.reg-verfiy-container {
+  .register-verfiy-desc {
+    padding-top: 14px;
+    padding-bottom: 30px;
+
+    .desc {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: #828282;
+      max-width: 430px;
+    }
+  }
+  .reg-verfiy-resend-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .resend-title-first {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: #828282;
+    }
+
+    .resendBtn {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: $primary-color;
+      padding-left: 10px;
+    }
+    .resendBtn:focus {
+      box-shadow: unset !important;
+    }
+  }
+  .counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+  }
+}

@@ -1,0 +1,86 @@
+@import "assets/scss/abstracts/abstracts.scss";
+
+.switch-scheme-details {
+  .scheme-details-parent {
+    background-color: $background-white;
+  }
+  .box {
+    border: 1px solid $border-grey;
+    border-radius: 8px;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 20px;
+    .title {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .box-content {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .list {
+        font-weight: 500;
+        font-size: 16px;
+        color: $grey;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-right: 30px;
+        span {
+          margin-right: 14px;
+        }
+        strong {
+          font-weight: 600;
+        }
+      }
+      .error-msg {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 18px;
+        color: $danger;
+      }
+    }
+  }
+}
+.nav-date-with-rupee {
+  margin-left: 12px;
+}
+.since-list {
+  font-weight: 500;
+  font-size: 16px;
+  color: $grey;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  strong {
+    font-weight: 600;
+    margin-left: 12px;
+  }
+}
+.box {
+  th {
+    width: 100px;
+  }
+}
+.table-block {
+  table {
+    width: 100%;
+
+    // table ui change
+    th {
+      background: $table-grey;
+      font-weight: 600;
+      font-size: 18px;
+      color: $grey-65;
+      padding: 10px;
+    }
+    td {
+      padding: 20px 10px;
+      font-weight: 500;
+      font-size: 16px;
+      color: $grey-65;
+      background-color: $white;
+    }
+  }
+}

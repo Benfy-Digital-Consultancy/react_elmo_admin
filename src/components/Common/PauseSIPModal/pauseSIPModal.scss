@@ -1,0 +1,44 @@
+.pause-sip-popup {
+  .error-text {
+    font-size: 16px;
+    line-height: 22px;
+    color: #ed1f24;
+    padding-left: 20px;
+  }
+  .pause-sip-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    line-height: 22px;
+    color: #ed1f24;
+    font-weight: 700;
+  }
+  .pause-cancel-popup {
+    .description {
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #828282;
+    }
+    .checkbox-list {
+      margin-bottom: 10px;
+      .custom-checkbox {
+        font-weight: 500;
+        font-size: 16px;
+        input[type="checkbox"]:checked {
+          ~ label.black {
+            color: #828282;
+          }
+        }
+        label {
+          color: #828282;
+        }
+      }
+    }
+    .primary-btn {
+      margin-top: 40px;
+      min-width: 300px;
+    }
+  }
+}

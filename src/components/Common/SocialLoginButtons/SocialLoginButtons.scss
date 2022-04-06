@@ -1,0 +1,20 @@
+.socialLoginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .soicalLogin-customStyle {
+    font-size: 25px;
+    color: black;
+    background-color: transparent;
+    border: 0;
+  }
+  .socialLoginGooleIcon {
+    margin: unset !important;
+    width: 25px !important;
+    margin-left: 25px !important;
+    height: 25px !important;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
