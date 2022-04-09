@@ -70,3 +70,9 @@ export const SchemeDetailsHeader = [
 
 ];
 
+
+
+
+export const strings = {
+  elmo:'Elmo'
+}

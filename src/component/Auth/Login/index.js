@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import FormErrorMessage from "component/common/ErrorMessage";
 import NormalButton from "component/common/NormalButton/NormalButton";
 import Checkbox from '@mui/material/Checkbox';
+import { strings } from "service/helpers/Constants";
 
 const LoginComp = () => {
   const { register, handleSubmit, errors, reset } = useForm();
@@ -32,7 +33,7 @@ const LoginComp = () => {
                 <div className="row">
                   <div className="col-md-9 col-lg-8 mx-auto">
                     <h3 className="login-heading">
-                      <span className="title_elmo">ELMO</span>
+                      <span className="title_elmo">{strings.elmo}</span>
                       <span className="title_admin">Admin</span>
                     </h3>
                     <p className="mb-4 text-muted discription">
