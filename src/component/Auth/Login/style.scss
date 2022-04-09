@@ -1,0 +1,43 @@
+@import "../../../assets/scss/variables.scss";
+
+.bg-image {
+  background-image: url("../../../assets/images/elmo_group.png");
+  background-size: cover;
+  background-position: center;
+  height: 47vw;
+}
+.login-heading {
+  color: $primary-color;
+  text-align: center;
+  line-height: 64px;
+}
+.title_elmo{
+  color: #257E24;
+  margin-right: 12px;
+  font-size: 48px;
+  font-weight: 600;
+}
+.title_admin{
+  color: #0655A3;
+  font-size: 48px;
+  font-weight: 600;
+}
+.discription{
+  
+    text-align: center;
+    color: #222222;
+    font-weight: 400;
+font-size: 20px;
+}
+.forgot{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  span{
+    color:  #228B22;
+    ;
+  }
+  .forgot_password{
+    text-align: end;
+  }
+}

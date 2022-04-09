@@ -1,0 +1,58 @@
+.select_label {
+  color: #5f6377;
+  font-weight: bold;
+  display: block;
+}
+.custom_select {
+  width: 60px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+  position: relative;
+  outline: none;
+  .select_value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    .fa-chevron-down {
+      font-size: 12px;
+      color: #212529;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+  }
+  .placeHolder {
+    color: #979797;
+  }
+  .select_options {
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.15));
+    width: 100%;
+    max-height: 100px;
+    overflow: auto;
+    z-index: 2;
+    .options {
+      padding: 5px 15px;
+      color: #484848;
+    }
+    .options:hover {
+      background-color: #e8e8e8;
+    }
+  }
+  .select_options::-webkit-scrollbar {
+    width: 7px;
+  }
+  .select_options::-webkit-scrollbar-track {
+    background: white;
+  }
+  .select_options::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+  }
+}

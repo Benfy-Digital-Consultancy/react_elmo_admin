@@ -1,15 +1,30 @@
 import React from "react";
-import { SideBarCmp } from "../components/Common/SideBar/SideBar";
-import Header from "../components/Common/Header/Header";
+import Sidebar from "../component/common/Sidebar";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { mainLayoutStyle } from "service/helpers/Constants";
+import Header from "../component/common/Header";
+export function MainLayout(props) {
+  const outerTheme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#1A4BA1",
+      },
 
-export default function MainLayout({ children, currentFlow, apploginRole }) {
+      secondary: {
+        main: "#FBFBFB",
+      },
+    },
+  });
+  const classes = mainLayoutStyle();
   return (
     <>
-      <Header currentFlow={currentFlow} />
-      <div className="page-container">
-        <SideBarCmp currentFlow={currentFlow} apploginRole={apploginRole} />
-        <div className="right-side-container ">{children}</div>
-      </div>
+      <Header />
+      <ThemeProvider theme={outerTheme}>
+        <div className={classes.root + " mb-5"}>
+          <Sidebar classes={classes} />
+          <main className={classes.content}>{props.children}</main>
+        </div>
+      </ThemeProvider>
     </>
   );
 }

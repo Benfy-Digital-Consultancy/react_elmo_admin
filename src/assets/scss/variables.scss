@@ -1,0 +1,92 @@
+$primary-color: #289f5b;
+$primary-color-dark: #208e5a;
+$light-gray: #e0e0e0;
+$gold: #c89a32;
+$orange: #f58d45;
+$white: #fff;
+$green: #0a8c5b;
+$green-18: #189c5c;
+$black: #000;
+$black-50: #505050;
+$black-1c: #1c2c25;
+$grey: #929292;
+$grey-65: #696464;
+$black-4D: #4d4d4d;$primary-color: #2a468d;
+$secondary-color: #4a5c7b;
+$green: #22db3b;
+$white: #fff;
+$danger: #ed1f24;
+$black: #000;
+$orange: #f49d37;
+$grey: #828282;
+$grey-65: #6b6b6b;
+$gray-sideBar: #bdbdbd;
+$gray-header: #f4f4f4;
+$full-height: 100vh;
+$background-white:#fbfbfb;
+$border-grey:#c4c4c4;
+$table-grey:#e0e0e0;
+$common-white:#fafafa;
+
+/* Color */
+$myColors: (
+  "white": $white,
+  "grey": $gray-sideBar,
+  "grey-82": $grey,
+  "green": $green,
+  "primary-color": $primary-color,
+);
+
+@each $name, $colors in $myColors {
+  $index: index($myColors, $colors);
+  .text-#{$name} {
+    color: $colors;
+  }
+  .bg-#{$name} {
+    background-color: $colors;
+  }
+  .bc-#{$name} {
+    border-color: $colors;
+  }
+}
+
+$full-height: 100vh;
+
+.text-black {
+  color: $black;
+}
+.text-black-50 {
+  color: $black-50;
+}
+.text-black-30 {
+  color: #303030;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-black-4D {
+  color: $black-4D;
+}
+
+.text-grey-65 {
+  color: $grey-65;
+}
+
+.text-green-18 {
+  color: $green-18;
+}
+
+.bg-green {
+  background-color: $green-18;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.makeStyles-toolbar-151{
+  min-height: 0px !important;
+}
+.makeStyles-drawer-147{
+width: 220px !important;
+}

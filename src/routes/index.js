@@ -1,316 +1,123 @@
-import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-import { connect } from "react-redux";
-import {
-  ForgotPassword,
-  Login,
-  ClientDashboard,
-  BuyInvestmentNew,
-  BuyInvestment,
-  MutualFundPage,
-  TransactionHistoryPage,
-  FamilyPage,
-  Sip,
-  Register,
-  SellPage,
-  RedeemPage,
-  NavHistoryPage,
-  SchemeDetailsPage,
-  SwitchSTP,
-  OrderDetailsMainPage,
-  CutOffTimesPage,
-  CreateFamilyPage,
-  Notifications,
-  Nfo,
-  ReportPage,
-  ViewReportTablePage,
-  ProductList,
-  ClientReferPage,
-  ProductForm,
-  MyProfilePage,
-  RiskHistoryPage,
-  EditProfilePage,
-  OtherInvestments,
-} from "../pages/index";
-import planInvestmentView from "../components/clientFlow/clientBuyInvestmentNew/planInvestmentView";
-import investmentPlan from "../components/clientFlow/clientBuyInvestmentNew/investmentPlan";
-import schemeDetails from "../components/clientFlow/clientBuyInvestmentNew/SchemeDetails/index";
-import productCategoryView from "../components/clientFlow/clientBuyInvestmentNew/ProductInvestment/index";
-import BuyPurchaseAmount from "components/clientFlow/clientBuyInvestment/PurchaseAmount/index";
-import BuyPurchaseStatus from "components/clientFlow/clientBuyInvestment/PurchaseStatus";
+import React, { Component, Suspense } from "react";
+import { Route, Router, Redirect } from "react-router-dom";
+import Routers from "./routes";
+import * as Layout from "../layout";
+import { history } from "../helpers";
+import CodeSplitter from "helpers/CodeSplitter";
 
-import { NotificationContainer } from "react-notifications";
-import { bindActionCreators } from "redux";
-import MainLayout from "layout/MainLayout";
-import { getWhiteLabelingPartnerDetails } from "redux/action/LoginAct";
-import { endpoints } from "service/helpers/config";
-import {
-  getDataFromStorage,
-  setDataFromStorage,
-} from "service/helperFunctions";
-import investmentStatus from "components/clientFlow/clientBuyInvestmentNew/investmentStatus";
-import BankMandate from "components/clientFlow/BankMandate";
-
-const Routes = (props) => {
-  let routes = [],
-    redirectPath = "/dashboard",
-    currentFlow = "LOGINFLOW";
-  const { USER_ROLE_kEY, USER_ROLE_DATA } = endpoints.auth;
-  let userRoleData = getDataFromStorage(USER_ROLE_kEY, USER_ROLE_DATA);
-  let apploginRole;
-  if (userRoleData) {
-    apploginRole = userRoleData;
-    let rolename = apploginRole?.rolename;
-    if (rolename) {
-      if (rolename === "Customer") {
-        currentFlow = "CLIENTFLOW";
-      } else if (rolename === "Advisor") {
-        currentFlow = "RMFLOW";
-      } else if (rolename === "Partner") {
-        currentFlow = "PARTNERFLOW";
-      }
-    }
+class RoutesClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      renderRoute: false,
+      pathname: null,
+      loading: true,
+    };
   }
 
-  const loginFlowRoutes = [
-    {
-      path: "/login",
-      PageComponent: Login,
-      layout: "login",
-    },
-    {
-      path: "/forgot-password",
-      PageComponent: ForgotPassword,
-      layout: "login",
-    },
-    {
-      path: "/register",
-      PageComponent: Register,
-      layout: "login",
-    },
-  ];
+  componentWillMount() {}
 
-  const clientFlowRoutes = [
-    {
-      path: "/dashboard",
-      PageComponent: ClientDashboard,
-    },
-    {
-      path: "/bankMandate",
-      PageComponent: BankMandate,
-    },
-    {
-      path: "/dashboard/mutual-fund",
-      PageComponent: MutualFundPage,
-    },
-    {
-      path: "/other-investments/:fundType/:productId",
-      PageComponent: OtherInvestments,
-    },
-    {
-      path: "/dashboard/mutual-fund/transaction-history",
-      PageComponent: TransactionHistoryPage,
-    },
-    {
-      path: "/buyInvestment",
-      PageComponent: BuyInvestment,
-    },
-    {
-      path: "/buyInvestmentPurchase",
-      PageComponent: BuyPurchaseAmount,
-    },
-    {
-      path: "/buyInvestmentPurchaseStatus",
-      PageComponent: BuyPurchaseStatus,
-    },
-    {
-      path: "/sip",
-      PageComponent: Sip,
-    },
-    {
-      path: "/dashboard/mutual-fund/:investmentType",
-      PageComponent: SellPage,
-    },
-    {
-      path: "/mutual-fund/nav-history",
-      PageComponent: NavHistoryPage,
-    },
-    {
-      path: "/mutual-fund/scheme-details",
-      PageComponent: SchemeDetailsPage,
-    },
-    {
-      path: "/mutual-fund/:investmentType",
-      PageComponent: SwitchSTP,
-    },
-    {
-      path: "/investment/mutual-fund/redeem",
-      PageComponent: RedeemPage,
-    },
-    {
-      path: "/order-details",
-      PageComponent: OrderDetailsMainPage,
-    },
-    {
-      path: "/order-details/cut-off-times",
-      PageComponent: CutOffTimesPage,
-    },
-    {
-      path: "/buy-investment",
-      PageComponent: BuyInvestmentNew,
-    },
-    {
-      path: "/planInvestmentView/:Id?/:NextQuestionId?/:QuestionSurveyListId?",
-      PageComponent: planInvestmentView,
-    },
-    {
-      path: "/investmentPlan/:client_code/:surveyId/:isPreviousGoal",
-      PageComponent: investmentPlan,
-    },
-    {
-      path: "/investmentStatus",
-      PageComponent: investmentStatus,
-    },
-    {
-      path: "/scheme-details/:schemeLabel",
-      PageComponent: schemeDetails,
-    },
-    {
-      path: "/buy-investment-product",
-      PageComponent: productCategoryView,
-    },
+  componentDidMount() {}
 
-    {
-      path: "/family",
-      PageComponent: FamilyPage,
-    },
-    {
-      path: "/notifications",
-      PageComponent: Notifications,
-    },
-    {
-      path: "/report",
-      PageComponent: ReportPage,
-    },
-    {
-      path: "/report/view-report/:reportId/:reportName",
-      PageComponent: ViewReportTablePage,
-    },
-    {
-      path: "/family/create-family",
-      PageComponent: CreateFamilyPage,
-    },
-    {
-      path: "/notifications",
-      PageComponent: Notifications,
-    },
-    {
-      path: "/nfo",
-      PageComponent: Nfo,
-    },
-    {
-      path: "/productlist/:productId/:productName",
-      PageComponent: ProductList,
-    },
-    {
-      path: "/scheme-invest/:productId/:productName/:schemeName",
-      PageComponent: ProductForm,
-    },
-    {
-      path: "/client-refer",
-      PageComponent: ClientReferPage,
-    },
-    {
-      path: "/my-profile",
-      PageComponent: MyProfilePage,
-    },
-    {
-      path: "/my-profile/risk-history",
-      PageComponent: RiskHistoryPage,
-    },
-    {
-      path: "/my-profile/edit-profile",
-      PageComponent: EditProfilePage,
-    },
-  ];
+  componentWillReceiveProps({ userPermissionDetails }) {}
 
-  if (currentFlow === "LOGINFLOW") {
-    routes = loginFlowRoutes.slice();
-    redirectPath = "/login";
-  } else if (currentFlow === "CLIENTFLOW") {
-    routes = clientFlowRoutes.slice();
-    redirectPath = "/dashboard";
-  } else {
-    routes = [...clientFlowRoutes, ...loginFlowRoutes];
-  }
+  render() {
+    return (
+      <Router history={history}>
+        <Suspense fallback={<div>Loading...</div>}>
+          {Routers.map(
+            ({
+              component,
+              name,
+              componentPath = "",
+              redirect,
+              path,
+              exact = false,
+              auth = true,
+              childrens = [],
+            }) => {
+              if (childrens.length > 0) {
+                return (
+                  <Route
+                    path={path}
+                    exact={exact}
+                    key={path}
+                    render={(props) => {
+                      if (redirect) {
+                        if (props.location.pathname == path) {
+                          props.history.push(redirect);
+                        }
+                      }
 
-  const { getWhiteLabelApiCall } = props;
-  useEffect(() => {
-    if (window?.location?.origin !== endpoints?.auth?.LOCALHOST) {
-      let query = {
-        Link: window?.location?.origin,
-        Code: "code",
-      };
-      getWhiteLabelApiCall(query).then((data) => {
-        let PartnerName = data?.ObjectResponse?.PartnerName || "Nivesh";
-        const linkElement = document.querySelector("link[rel=icon]");
-        if (data?.ObjectResponse?.Favicon !== null) {
-          linkElement.href = data?.ObjectResponse?.Favicon;
-        }
-        document.title = PartnerName;
-        setDataFromStorage(
-          PartnerName,
-          endpoints?.auth?.WHITELIST_SOURCE_DATA,
-          endpoints?.auth?.WHITELIST_SOURCE_KEY
-        );
-      });
-    }
-  }, [getWhiteLabelApiCall]);
+                      const LayoutComponent = Layout[component];
 
-  return (
-    <Router>
-      <div>
-        <Switch>
-          {routes.map(
-            ({ path, PageComponent, exact = true, layout }, index) => {
+                      return (
+                        <LayoutComponent {...props}>
+                          {childrens.map(
+                            ({
+                              component: ChildrenComponent,
+                              componentPath: childComponentPath,
+                              name = "",
+                              path: childrenPath,
+                              exact = false,
+                              auth = true,
+                            }) => {
+                              CodeSplitter.addComponent(
+                                childComponentPath,
+                                name
+                              );
+
+                              return (
+                                <Route
+                                  path={path + childrenPath}
+                                  exact={exact}
+                                  key={path + childrenPath}
+                                  render={(props) => {
+                                    let PageComponent =
+                                      CodeSplitter.getComponent(name);
+
+                                    return <PageComponent {...props} />;
+                                  }}
+                                />
+                              );
+                            }
+                          )}
+                        </LayoutComponent>
+                      );
+                    }}
+                  />
+                );
+              }
+
+              CodeSplitter.addComponent(componentPath, name);
+
               return (
-                <Route path={path} exact={exact} key={"Routes_" + index}>
-                  {layout === "login" ? (
-                    <PageComponent
-                      currentFlow={currentFlow}
-                      apploginRole={apploginRole}
-                    />
-                  ) : (
-                    <MainLayout
-                      currentFlow={currentFlow}
-                      apploginRole={apploginRole}
-                    >
-                      <PageComponent currentFlow={currentFlow} />
-                    </MainLayout>
-                  )}
-                </Route>
+                <Route
+                  path={path}
+                  exact={exact}
+                  key={component || 2322}
+                  render={(props) => {
+                    if (component) {
+                      let PageComponent = CodeSplitter.getComponent(name);
+                      return <PageComponent />;
+                    }
+
+                    if (redirect) {
+                      if (props.location.pathname == path) {
+                        return <Redirect to={redirect} />;
+                      }
+                    }
+
+                    return <div></div>;
+                  }}
+                />
               );
             }
           )}
-          <Redirect to={redirectPath} />
-        </Switch>
-      </div>
-      <NotificationContainer />
-    </Router>
-  );
-};
+        </Suspense>
+      </Router>
+    );
+  }
+}
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(
-    {
-      getWhiteLabelApiCall: getWhiteLabelingPartnerDetails,
-    },
-    dispatch
-  );
-};
-export default connect(null, mapDispatchToProps)(Routes);
+export default RoutesClass;
