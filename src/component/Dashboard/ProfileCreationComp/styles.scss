@@ -1,0 +1,40 @@
+.basicSection {
+  img {
+    width: 15%;
+  }
+  .sectionCall {
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .sectionHead {
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #243d63;
+    border-bottom: 1.9px solid #dbdde0;
+  }
+  label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #52575c;
+    opacity: 0.9;
+  }
+  .disabledInput {
+    padding: 9px 12px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    outline: none;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #7c7c7c;
+  }
+}

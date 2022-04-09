@@ -1,0 +1,75 @@
+
+.menu_adjust{
+margin: 6px;
+}
+.activeBar {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-left: 12px;
+  text-decoration: none !important;
+  :hover {
+    text-decoration: none !important;
+  }
+}
+
+.activeBarImg {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-decoration: none !important;
+  :hover {
+    text-decoration: none !important;
+  }
+}
+
+.inActiveBar {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #333333;
+  margin-left: 12px;
+  text-decoration: none !important;
+  :hover {
+    text-decoration: none !important;
+  }
+}
+.inactiveBarImg{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #333333;
+  text-decoration: none !important;
+  :hover {
+    text-decoration: none !important;
+  }
+  img{
+    color: #333333;
+  }
+}
+.active-div {
+  background-color: #20B169 !important;
+  border-radius: 8px !important;
+}
+
+.MuiList-padding {
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+.makeStyles-toolbar-6{
+min-height: 0px !important;
+}
