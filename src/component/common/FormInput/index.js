@@ -20,7 +20,7 @@ const FormInput = ({
       <input
         name={name}
         placeholder={placeholder}
-        className="formInputBox"
+        className="formInputBox font-regular-14"
         ref={register}
         defaultValue={value}
         type={type}

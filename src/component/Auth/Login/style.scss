@@ -41,3 +41,24 @@ font-size: 20px;
     text-align: end;
   }
 }
+.blank{
+  border-bottom: 1px solid #DDDFE1;
+}
+.tick_icon{
+  position: relative;
+  right: 40px;
+  background: #08AD36;
+  border-radius: 12px;
+  color: white;
+}
+.input_field{
+  display: flex;
+  align-items: center;
+}
+.bg_color{
+  background-color: #ffffff;
+}
+.show{
+  position: relative;
+  right: 50px;
+}

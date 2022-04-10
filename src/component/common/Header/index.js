@@ -7,6 +7,7 @@ import user from "assets/images/menOne.jpg";
 import bell from "assets/icons/bell.png";
 import "component/common/Header/header.scss";
 import search from "assets/icons/search.svg";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   header: {
@@ -34,24 +35,17 @@ const Header = () => {
             </div>
             <div className="col-md-8 d-flex justify-content-end">
               <div className="d-flex justify-content-between align-items-center">
-                <div className="mr-3">
-                  <span className="notificationBadge">3</span>
-                  <img src={bell} />
-                </div>
+                <Link to="/admin/notification">
+                  <div className="mr-3">
+                    <span className="notificationBadge">3</span>
+                    <img src={bell} />
+                  </div>
+                </Link>
                 <div className="imageDiv mr-3">
                   <Avatar src={user} />
                 </div>
                 <div className="userName">Dan Sanchez</div>
               </div>
-              {/* <div
-                className="logoutButton cursor-pointer"
-                onClick={() => logout()}
-              >
-                Logout
-                <span className="ml-2">
-                  <img src={logOut} />
-                </span>
-              </div> */}
             </div>
           </div>
         </div>

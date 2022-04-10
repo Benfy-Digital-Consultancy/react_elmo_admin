@@ -91,9 +91,15 @@ $full-height: 100vh;
 width: 220px !important;
 }
 .makeStyles-content-8 {
-padding-top: 0.5rem !important;
-background-color: #E5E5E5 !important;
+// background-color: #E5E5E5 !important;
+margin-left: 22px !important;
 }
 .ant-select-selector{
   border: none !important;
+}
+.ant-switch-checked{
+  background-color: #0655A3 !important;
+}
+body{
+  background-color: #fafafa !important;
 }

@@ -1,0 +1,68 @@
+.onboard_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchBox {
+    display: flex;
+    .searchInput {
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      height: 35px;
+      width: 100%;
+      padding: 0px 20px 0px 20px;
+    svg{
+        position: relative !important;
+        right: 30px !important;
+        top: 4px !important;
+    }
+    }
+  }
+  .search_filter{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .gender_filter{
+          display: flex;
+          align-items: center;
+
+      }
+    }
+    .tooletip_lable{
+        font-size: 16px;
+        font-weight: 800;
+      }
+      .tooletip_lable:hover{
+        font-size: 16px;
+        font-weight: 800;
+        background-color: #D3F4E4;
+        padding: 8px;
+        border-radius: 30px;
+      }
+      .ant-tooltip-inner {
+        color: #8F9295 !important;
+        background-color: #ffffff !important;
+        width: 130px;
+        padding: 12px !important;
+      }
+      .tooletip_icon{
+          margin-left: 6px;
+      }
+
+      // create user page css
+      .create_header{
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.04);
+        border-radius: 0px 0px 6px 6px;
+        padding: 30px;
+        .user-title{
+          color: #333333;
+        }
+        .blank{
+          border-bottom: 1px solid #cfcfcf;
+        }
+      }

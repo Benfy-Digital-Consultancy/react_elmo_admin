@@ -45,7 +45,7 @@ const Cards = () => {
                     </div>
                 </div>
                 <div className='col-3'>
-                    <div className='card_header'>
+                    {/* <div className='card_header'>
                         <div className="card_icon">
                             <BiUserCheck size={25} color="#5F2EEA" />
                         </div>
@@ -60,10 +60,10 @@ const Cards = () => {
 
                         </div>
 
-                    </div>
+                    </div> */}
                 </div>
                 <div className='col-3'>
-                    <div className='card_header'>
+                    {/* <div className='card_header'>
                         <div className="card_icon">
                             <FaSchool size={25} color="#F79433" />
                         </div>
@@ -78,7 +78,7 @@ const Cards = () => {
 
                         </div>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

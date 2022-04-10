@@ -29,7 +29,7 @@ const ChartComponent = () => {
                     </div>
                 </div>
                 <div className='col-6'>
-                    <div className='chart_header'>
+                    {/* <div className='chart_header'>
                         <div className="chart_title">
                             <label className="font-bold-18">Type of Education Board</label>
                             <SelectFilter
@@ -42,7 +42,7 @@ const ChartComponent = () => {
                         <div className="donut">
                             <Chart options={chartData.options} series={chartData.series} type="donut" width="380" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

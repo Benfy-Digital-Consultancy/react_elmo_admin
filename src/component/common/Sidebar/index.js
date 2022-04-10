@@ -17,6 +17,8 @@ import { useLocation } from "react-router-dom";
 import { BsGrid1X2 } from "react-icons/bs";
 import { FaSchool } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineLogout } from "react-icons/hi";
+
 
 
 
@@ -40,10 +42,17 @@ const navLink = [
     iconName: <FaSchool size={25} />,
   },
   {
-    to: "/admin/settings",
+    to: "/admin/profile",
     label: "Profile Settings",
     iconName: <IoSettingsOutline size={25} />,
   },
+];
+const logout = [
+  {
+    to: "/auth/login",
+    label: "Log out",
+    iconName: <HiOutlineLogout size={25} />
+  }
 ];
 
 function Sidebar({ classes, window }) {
@@ -58,9 +67,6 @@ function Sidebar({ classes, window }) {
   const drawer = (
     <div>
       <div className={classes.toolbar}>
-        {/* <div className="text-center  pt-4 pb-5">
-          <img src={logo} alt="logo"></img>
-        </div> */}
       </div>
       <List className={classes.nav} style={{ textDecoration: "none" }}>
         {navLink.map(
@@ -101,6 +107,48 @@ function Sidebar({ classes, window }) {
           )
         )}
       </List>
+      <div className="logout_list">
+        <List className={classes.nav} style={{ textDecoration: "none" }}>
+          {logout.map(
+            ({ to, label, iconName, iconTransparent, nestedChild }, index) => (
+              <>
+                <NavLink
+                  key={index}
+                  to={to}
+                  onClick={to !== "/something" ? () => setActiveIndex(index) : ""}
+                  style={{ textDecoration: "none" }}
+                >
+                  <ListItem
+                    button
+                    className={
+                      location.pathname === to ? "active-div" : "inActive-div"
+                    }
+                  >
+                    <div>
+                      <ListItemText>
+                        <span className={
+                          location.pathname === to ? "activeBarImg" : "inactiveBarImg"
+                        }>
+                          {iconName}
+                        </span>
+
+                        <span
+                          className={
+                            location.pathname === to ? "activeBar" : "inActiveBar"
+                          }
+                        >
+                          {label}
+                        </span>
+                      </ListItemText>
+                    </div>
+                  </ListItem>
+                </NavLink>
+              </>
+            )
+          )}
+        </List>
+      </div>
+
     </div>
   );
 

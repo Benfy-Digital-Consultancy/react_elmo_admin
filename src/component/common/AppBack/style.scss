@@ -1,0 +1,18 @@
+@import "../../../assets/scss/abstracts.scss";
+.app-back {
+  .content-title {
+    padding: -1px 32px;
+    color: $primary-color-dark;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    span {
+      padding-left: 12px;
+      line-height: 22px;
+    }
+  }
+}

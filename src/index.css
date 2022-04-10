@@ -72,6 +72,11 @@
     font-family: 'Lato';
     font-weight: 700;
   }
+  .font-bold-20{
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 700;
+  }
   
   .font-bold-20{
     font-size: 20px;
@@ -99,3 +104,48 @@
     font-weight: 600;
     font-size: 18px;
   }
+.font-regular-16{
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 16px;
+}
+.font-bold-16{
+  font-family: 'Lato';
+  font-weight: 600;
+  font-size: 16px;
+}
+.font-semi-bold-16{
+  font-family: 'Lato';
+  font-weight: 600;
+  font-size: 16px;
+}
+.font-regular-14{
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 14px;
+}
+.font-regular-16{
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 16px;
+}
+.font-bold-16{
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 16px;
+}
+.font-bold-20{
+  font-size: 20px;
+  font-family: 'Lato';
+  font-weight: 700;
+}
+.font-semi-bold-12{
+  font-size: 12px;
+  font-family: 'Lato';
+  font-weight: 600;
+}
+.font-extra-bold-15{
+  font-size: 15px;
+  font-family: 'Lato';
+  font-weight: 800;
+}

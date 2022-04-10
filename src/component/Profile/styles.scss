@@ -1,0 +1,59 @@
+.profile-title{
+    line-height: 64px;
+}
+ // create user page css
+ .create_header{
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 0px 0px 6px 6px;
+    padding: 30px;
+    .profile-content{
+      color: #0655A3;
+    }
+    .blank{
+      border-bottom: 1px solid #cfcfcf;
+    }
+    .profile-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .profile-lable{
+      color: #555555;
+    }
+    .profile-lable-content{
+      color: #222222;
+    }
+    .change{
+      color: #20B169;
+    }
+    .profile-footer{
+    display: flex;
+    align-items: center;
+    label{
+      margin-bottom: 0px !important;
+    }
+    span{
+      margin-bottom: 6px;
+    margin-left: 8px;
+    text-decoration: underline;
+    }
+    }
+  }
+  .img-align{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  
+  .user-profile-icon{
+    width: 120px;
+    height: 120px;
+    border-radius: 85px;
+  }
+  .profile-view-content{
+    margin-top: -126px;
+  }
