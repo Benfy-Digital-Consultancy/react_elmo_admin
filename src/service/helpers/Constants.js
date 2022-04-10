@@ -46,7 +46,7 @@ export const mainLayoutStyle = makeStyles((theme) => ({
     // borderTopL: "none",
     marginTop: "65px",
     backgroundColor: "#FFFFFF;",
-    width: "14%",
+    width: "15%",
   },
   content: {
     flexGrow: 1,
@@ -74,5 +74,5 @@ export const SchemeDetailsHeader = [
 
 
 export const strings = {
-  elmo:'Elmo'
+  elmo: 'Elmo'
 }

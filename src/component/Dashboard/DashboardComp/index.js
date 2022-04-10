@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import './styles.scss'
 import TableWrapper from "component/common/TableWrapper";
 import { SchemeDetailsHeader } from "../../../service/helpers/Constants";
+import Cards from "component/common/Cards";
+import ChartComponent from "./ChartComp";
 
 
-const DashboardComp = () => {
+
+
+const DashboardComp = (props) => {
   const [tableData, setTableData] = useState([
     {
       sno: "1",
@@ -27,7 +31,14 @@ const DashboardComp = () => {
   ])
   return (
     <>
-      <div className="dashboard-title">Dashboard</div>
+      <div className="dashboard-title font-bold-28">Dashboard</div>
+      <div className="mb-3">
+        <Cards />
+      </div>
+      <div>
+        <ChartComponent />
+      </div>
+
       <div>
         <div className="table_subTitle">
           <label >New Schools Onboarded</label>

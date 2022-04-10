@@ -11,11 +11,15 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
-import grid from "../../../assets/icons/grid.png";
-import user from "../../../assets/icons/user.png";
 import settings from "../../../assets/icons/settings.png";
-
+import { HiOutlineUsers } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
+import { BsGrid1X2 } from "react-icons/bs";
+import { FaSchool } from "react-icons/fa";
+import { IoSettingsOutline } from "react-icons/io5";
+
+
+
 
 import "./style.scss";
 
@@ -23,13 +27,22 @@ const navLink = [
   {
     to: "/admin/dashboard",
     label: "Dashboard",
-    iconName: grid,
+    iconName: <BsGrid1X2 size={25} />,
   },
-
+  {
+    to: "/admin/user-onboard",
+    label: "User Onboard",
+    iconName: <HiOutlineUsers size={25} />,
+  },
+  {
+    to: "/admin/school-onboard",
+    label: "School Onboard",
+    iconName: <FaSchool size={25} />,
+  },
   {
     to: "/admin/settings",
-    label: "Settings",
-    iconName: settings,
+    label: "Profile Settings",
+    iconName: <IoSettingsOutline size={25} />,
   },
 ];
 
@@ -70,7 +83,7 @@ function Sidebar({ classes, window }) {
                       <span className={
                         location.pathname === to ? "activeBarImg" : "inactiveBarImg"
                       }>
-                        <img src={iconName} />
+                        {iconName}
                       </span>
 
                       <span

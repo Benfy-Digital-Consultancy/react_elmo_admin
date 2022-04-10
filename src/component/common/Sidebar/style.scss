@@ -18,14 +18,11 @@ margin: 6px;
 }
 
 .activeBarImg {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  text-decoration: none !important;
+  color: #20B169;
+    background-color: white;
+    border-radius: 18px;
+    text-decoration: none !important;
+    padding: 8px;
   :hover {
     text-decoration: none !important;
   }
@@ -46,12 +43,6 @@ margin: 6px;
   }
 }
 .inactiveBarImg{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
   color: #333333;
   text-decoration: none !important;
   :hover {

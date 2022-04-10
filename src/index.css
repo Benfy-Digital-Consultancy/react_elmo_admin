@@ -73,11 +73,29 @@
     font-weight: 700;
   }
   
-  
-  
   .font-bold-20{
     font-size: 20px;
     font-family: 'Lato';
     font-weight: 900;
   }
+  .font-bold-21{
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 20px;
+  }
   
+  .font-bold-28{
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 28px;
+  }
+  .font-bold-14{
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .font-bold-18{
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 18px;
+  }
