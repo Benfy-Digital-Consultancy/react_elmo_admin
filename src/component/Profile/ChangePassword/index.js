@@ -20,35 +20,24 @@ const ChangePassword = (props) => {
                 <div className="blank" />
                 <div className="row pt-4">
                     <div className="col-6">
-                        <label className="font-regular-16">First Name</label>
+                        <label className="font-regular-16">Current Password *</label>
                         <FormInput />
                     </div>
                     <div className="col-6">
-                        <label className="font-regular-16">Last Name</label>
-                        <FormInput />
-                    </div>
-                </div>
-                <div className="row pt-4">
-                    <div className="col-6">
-                        <label className="font-regular-16">Phone Number</label>
-                        <div className="row">
-                            <div className="col-2"><FormInput /></div>
-                            <div className="col-10"><FormInput /></div>
-                        </div>
-                    </div>
-                    <div className="col-6">
-                        <label className="font-regular-16">Email Address</label>
+                        <label className="font-regular-16">New Password *</label>
                         <FormInput />
                     </div>
                 </div>
                 <div className="row pt-4">
                     <div className="col-6">
-                        <label className="font-regular-16">Gender</label>
-                        <NormalMultiSelect />
+                        <label className="font-regular-16">Confirm Password *</label>
+                        <FormInput />
                     </div>
+
                 </div>
+
                 <div className="row mt-3">
-                    <div className="col-2"><NormalButton outlineButton label="Cancel" className="font-bold-16" /></div>
+                    <div className="col-2"><NormalButton onClick={() => history.goBack()} outlineButton label="Cancel" className="font-bold-16" /></div>
                     <div className="col-2"><NormalButton dasboardButton label="Change Password" /></div>
                 </div>
             </div>

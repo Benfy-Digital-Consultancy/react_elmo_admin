@@ -32,7 +32,7 @@ const DashboardComp = (props) => {
   return (
     <>
       <div className="dashboard-title font-bold-28">Dashboard</div>
-      <div className="mb-3">
+      <div className="mb-4">
         <Cards />
       </div>
       <div>
@@ -40,7 +40,7 @@ const DashboardComp = (props) => {
       </div>
 
       <div>
-        <div className="table_subTitle">
+        <div className="table_subTitle mt-4">
           <label >New Schools Onboarded</label>
         </div>
         <TableWrapper

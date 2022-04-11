@@ -24,10 +24,10 @@
 }
 .discription{
   
-    text-align: center;
-    color: #222222;
-    font-weight: 400;
-font-size: 20px;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+font-size: 16px;
 }
 .forgot{
   display: flex;
@@ -71,8 +71,13 @@ font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 40px;
-    margin-right: 40px;
+   
+}
+.in-active-resend{
+  opacity: 0.5;
+}
+.resend-button{
+  opacity: 1;
 }
 .counter{
     label{

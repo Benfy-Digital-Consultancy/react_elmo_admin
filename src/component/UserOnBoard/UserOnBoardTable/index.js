@@ -22,12 +22,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+            
         },
         {
             sno: "2",
@@ -35,12 +30,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "3",
@@ -48,12 +38,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "4",
@@ -61,12 +46,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "5",
@@ -74,12 +54,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "6",
@@ -87,12 +62,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+          
         },
         {
             sno: "7",
@@ -100,12 +70,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "8",
@@ -113,12 +78,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "9",
@@ -126,12 +86,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch defaultChecked onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+            
         },
         {
             sno: "10",
@@ -139,12 +94,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "11",
@@ -152,12 +102,7 @@ const UserOnBoardTable = (props) => {
             school_logo: "AshwinRaj@gmail.com",
             school_name: "+91 9038201928",
             board: <Switch onChange={onChange} />,
-            email_id: <Tooltip title={<div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                <div><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
 
     ])
@@ -193,7 +138,14 @@ const UserOnBoardTable = (props) => {
                                             <td align="center">{item.school_logo}</td>
                                             <td align="center">{item.school_name}</td>
                                             <td align="center">{item.board}</td>
-                                            <td align="center">{item.email_id}</td>
+                                            <td align="center">
+                                                <Tooltip title={<div>
+                                                    <div onClick={props.onClickEdit} className="mt-1"><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
+                                                    <div onClick={props.onClickDelete} className="mt-3 mb-2"><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
+                                                </div>} placement="bottomRight">
+                                                    <label className="tooletip_lable">...</label>
+                                                </Tooltip>
+                                            </td>
                                         </tr>
                                     </React.Fragment>
                                 )

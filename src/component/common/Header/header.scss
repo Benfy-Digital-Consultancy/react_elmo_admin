@@ -2,7 +2,7 @@
 .userName {
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 22px;
   letter-spacing: 0.02em;
   color: #353a3d;
@@ -13,8 +13,22 @@
   width: 20px;
   transform: translate(61%, -46%);
   border-radius: 50%;
-  padding: 1px 5px;
   background-color: #eb5757;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-bottom: 6px;
+  margin-bottom: 1px;
   color: #353a3d;
+}
 
+.notification-count{
+  position: absolute;
+  transform: translate(61%, -46%);
+  font-family: 'Lato';
+  margin-left: 14px;
+  margin-top: -1px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
 }

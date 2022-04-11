@@ -6,7 +6,7 @@ margin: 6px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #ffffff;
@@ -32,7 +32,7 @@ margin: 6px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #333333;
@@ -68,4 +68,14 @@ min-height: 0px !important;
   position: relative;
   top: 340px;
   border-top: 1px solid #DDDFE1;
+}
+
+.inactivebar-icon{
+  width: 20px;
+  height: 18px;
+}
+
+.activebar-icon{
+  width: 20px;
+  height: 16px;
 }

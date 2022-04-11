@@ -7,6 +7,7 @@ import FormInput from "component/common/FormInput";
 import NormalMultiSelect from "component/common/NormalMultiSelect";
 import NormalButton from "component/common/NormalButton/NormalButton";
 import FileUploadButton from "component/common/FileUpload";
+import indian_flag from 'assets/images/indian_flag.png'
 
 const CreateSchoolUser = (props) => {
     let history = useHistory();
@@ -35,7 +36,11 @@ const CreateSchoolUser = (props) => {
                     <div className="col-6">
                         <label className="font-regular-16">Contact Number</label>
                         <div className="row">
-                            <div className="col-2"><FormInput /></div>
+                        <div className="col-2">
+                                <div className="countryCode">
+                                    <img src={indian_flag} className="flag"/>
+                                </div>  
+                            </div>
                             <div className="col-10"><FormInput /></div>
                         </div>
                     </div>

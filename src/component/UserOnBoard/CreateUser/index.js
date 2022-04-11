@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import FormInput from "component/common/FormInput";
 import NormalMultiSelect from "component/common/NormalMultiSelect";
 import NormalButton from "component/common/NormalButton/NormalButton";
-
+import indian_flag from 'assets/images/indian_flag.png'
 
 const CreateUser = (props) => {
     let history = useHistory();
@@ -35,7 +35,11 @@ const CreateUser = (props) => {
                     <div className="col-6">
                         <label className="font-regular-16">Phone Number</label>
                         <div className="row">
-                            <div className="col-2"><FormInput /></div>
+                            <div className="col-2">
+                                <div className="countryCode">
+                                    <img src={indian_flag} className="flag"/>
+                                </div>  
+                            </div>
                             <div className="col-10"><FormInput /></div>
                         </div>
                     </div>

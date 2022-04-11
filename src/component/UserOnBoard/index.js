@@ -31,9 +31,13 @@ const UserOnBoardComp = (props) => {
                         className="searchInput"
                         value={searchBox}
                         onChange={(e) => setsearchBox(e.target.value)}
-                        placeholder={"Search"}
+                        placeholder={"Search User ID or User Name"}
                     />
-                    {/* <AiOutlineSearch size={25} color="#C7C7C7" /> */}
+                    <div className="mr-2" style={{
+                        marginTop:'7px'
+                    }}>
+                    <AiOutlineSearch size={20} color="#C7C7C7" />
+                    </div>
                 </div>
                 <div className="gender_filter">
                     <label className="mr-3 font-bold-14">Gender</label>
@@ -44,7 +48,10 @@ const UserOnBoardComp = (props) => {
                     />
                 </div>
             </div>
-            <UserOnBoardTable />
+            <UserOnBoardTable 
+             onClickDelete={()=>console.log("delete")}
+             onClickEdit={()=>console.log("edit")}
+            />
         </>
     )
 };

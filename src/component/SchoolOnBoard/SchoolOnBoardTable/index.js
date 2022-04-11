@@ -4,8 +4,8 @@ import TableWrapper from "component/common/TableWrapper";
 import { SchoolOnBoardHeader } from "../../../service/helpers/Constants";
 import 'antd/dist/antd.css';
 import { Switch, Tooltip } from 'antd';
-import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
-import { school_logo } from '../../../assets/images/school.png';
+import { AiOutlineEdit, AiOutlineEye,AiOutlineDelete } from "react-icons/ai";
+import school_logo from 'assets/images/school.png';
 import { Link } from "react-router-dom";
 
 
@@ -27,13 +27,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -43,13 +37,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -59,13 +47,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -75,13 +57,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -91,13 +67,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -107,13 +77,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+          
         },
         {
             sno: "1",
@@ -123,13 +87,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -139,13 +97,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+            
         },
         {
             sno: "1",
@@ -155,13 +107,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+           
         },
         {
             sno: "1",
@@ -171,15 +117,7 @@ const SchoolOnBoardTable = (props) => {
             board: "Matriculation",
             email_id: "SBOA@info.in",
             status: <Switch defaultChecked onChange={onChange} />,
-            action: <Tooltip title={<div>
-                <div><span><AiOutlineEye color="#8F9295" /></span>
-                    <Link to="/admin/view-school-user" color="#8F9295">
-                        <span className="tooletip_icon">View</span></Link></div>
-                <div><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-
-            </div>} placement="bottomRight">
-                <label className="tooletip_lable">...</label>
-            </Tooltip>
+          
         },
 
     ])
@@ -217,7 +155,15 @@ const SchoolOnBoardTable = (props) => {
                                             <td align="center">{item.board}</td>
                                             <td align="center">{item.email_id}</td>
                                             <td align="center">{item.status}</td>
-                                            <td align="center">{item.action}</td>
+                                            <td align="center">
+                                                <Tooltip title={<div>
+                                                    <div onClick={props.onClickView} className="mt-1"><span><AiOutlineEye color="#8F9295" /></span><span className="tooletip_icon">View</span></div>
+                                                    <div onClick={props.onClickEdit} className="mt-3"><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
+                                                    <div onClick={props.onClickDelete} className="mt-3 mb-2"><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
+                                                </div>} placement="bottomRight">
+                                                    <label className="tooletip_lable">...</label>
+                                                </Tooltip>
+                                            </td>
                                         </tr>
                                     </React.Fragment>
                                 )

@@ -9,6 +9,7 @@
     box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.04);
     border-radius: 0px 0px 6px 6px;
     padding: 30px;
+    height: 550px;
     .profile-content{
       color: #0655A3;
     }
@@ -50,10 +51,35 @@
   }
   
   .user-profile-icon{
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 85px;
   }
   .profile-view-content{
     margin-top: -126px;
+  }
+
+  .edit-icon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+  transform: translate(230%, -76%);
+  }
+
+
+  .countryCode{
+    background: #F9F9F9;
+    border: 0.25px solid #C0C0C0;
+    box-sizing: border-box;
+    width: 60px;
+    outline: none;
+    height: 40px;
+    display: flex;
+    padding: 9px 12px;
+    justify-content: center;
+  }
+  
+  .flag{
+    height: 20px;
+    width: 30px;
   }

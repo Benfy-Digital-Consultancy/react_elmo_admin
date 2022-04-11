@@ -3,7 +3,7 @@ import './styles.scss'
 import 'antd/dist/antd.css';
 import { useHistory } from "react-router-dom";
 import NormalButton from "component/common/NormalButton/NormalButton";
-import user from "../../assets/images/menOne.jpg";
+import profile_placeholder from "../../assets/images/profile_placeholder.png";
 import { Link } from "react-router-dom";
 
 const Profile = (props) => {
@@ -19,7 +19,7 @@ const Profile = (props) => {
                 </div>
                 <div className="blank" />
                 <div className="img-align">
-                    <img src={user} alt="user" className="user-profile-icon" />
+                    <img src={profile_placeholder} alt="user" className="user-profile-icon" />
                 </div>
                 <div className="profile-view-content">
                     <div className="row pt-4">

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AppBar, Toolbar, Typography, makeStyles } from "@material-ui/core";
 import { logout } from "service/utilities";
 import logo from "assets/images/elmo_title.png";
+import notificationBadge from "assets/images/notification_badge.png";
 import user from "assets/images/menOne.jpg";
 import bell from "assets/icons/bell.png";
 import "component/common/Header/header.scss";
@@ -36,12 +37,13 @@ const Header = () => {
             <div className="col-md-8 d-flex justify-content-end">
               <div className="d-flex justify-content-between align-items-center">
                 <Link to="/admin/notification">
-                  <div className="mr-3">
-                    <span className="notificationBadge">3</span>
+                  <div className="mr-4 mr-4">
+                    <img src={notificationBadge} className="notificationBadge"/>
+                    <span className="notification-count">3</span>
                     <img src={bell} />
                   </div>
                 </Link>
-                <div className="imageDiv mr-3">
+                <div className="imageDiv mr-4">
                   <Avatar src={user} />
                 </div>
                 <div className="userName">Dan Sanchez</div>

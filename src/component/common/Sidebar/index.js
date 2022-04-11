@@ -18,10 +18,16 @@ import { BsGrid1X2 } from "react-icons/bs";
 import { FaSchool } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
+import active_dashboard from "assets/images/active_dashboard.svg"
+import active_profile from "assets/images/active_profile.svg"
+import active_school from "assets/images/active_school.png"
+import active_user from "assets/images/active_user.svg"
 
 
-
-
+import inactive_dashboard from "assets/images/inactive_dashboard.svg"
+import inactive_profile from "assets/images/inactive_profile.png"
+import inactive_school from "assets/images/inactive_school.png"
+import inactive_user from "assets/images/inactive_user.png"
 
 import "./style.scss";
 
@@ -29,22 +35,26 @@ const navLink = [
   {
     to: "/admin/dashboard",
     label: "Dashboard",
-    iconName: <BsGrid1X2 size={25} />,
+    activeImg:active_dashboard,
+    inactiveImg:inactive_dashboard
   },
   {
     to: "/admin/user-onboard",
     label: "User Onboard",
-    iconName: <HiOutlineUsers size={25} />,
+    activeImg:active_user,
+    inactiveImg:inactive_user
   },
   {
     to: "/admin/school-onboard",
     label: "School Onboard",
-    iconName: <FaSchool size={25} />,
+    activeImg:active_school,
+    inactiveImg:inactive_school
   },
   {
     to: "/admin/profile",
     label: "Profile Settings",
-    iconName: <IoSettingsOutline size={25} />,
+    activeImg:active_profile,
+    inactiveImg:inactive_profile
   },
 ];
 const logout = [
@@ -70,7 +80,7 @@ function Sidebar({ classes, window }) {
       </div>
       <List className={classes.nav} style={{ textDecoration: "none" }}>
         {navLink.map(
-          ({ to, label, iconName, iconTransparent, nestedChild }, index) => (
+          ({ to, label, activeImg,inactiveImg, iconTransparent, nestedChild }, index) => (
             <>
               <NavLink
                 key={index}
@@ -89,7 +99,12 @@ function Sidebar({ classes, window }) {
                       <span className={
                         location.pathname === to ? "activeBarImg" : "inactiveBarImg"
                       }>
-                        {iconName}
+                        {/* {iconName} */}
+                        <img
+                        className={
+                          location.pathname === to ? "activebar-icon" : "inactivebar-icon"
+                        }
+                          src={location.pathname === to ? activeImg : inactiveImg}/>
                       </span>
 
                       <span
