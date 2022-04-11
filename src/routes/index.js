@@ -1,9 +1,11 @@
-import React, { Component, Suspense } from "react";
+import React, { Component, Suspense, useRef } from "react";
 import { Route, Router, Redirect } from "react-router-dom";
 import Routers from "./routes";
 import * as Layout from "../layout";
 import { history } from "../helpers";
 import CodeSplitter from "helpers/CodeSplitter";
+import Modal from "component/modal";
+import { NotificationContainer } from "react-notifications";
 
 class RoutesClass extends Component {
   constructor(props) {
@@ -15,11 +17,11 @@ class RoutesClass extends Component {
     };
   }
 
-  componentWillMount() {}
+  componentWillMount() { }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
-  componentWillReceiveProps({ userPermissionDetails }) {}
+  componentWillReceiveProps({ userPermissionDetails }) { }
 
   render() {
     return (
@@ -76,7 +78,11 @@ class RoutesClass extends Component {
                                     let PageComponent =
                                       CodeSplitter.getComponent(name);
 
-                                    return <PageComponent {...props} />;
+                                    return <div>
+                                      <PageComponent {...props} />;
+                                      <Modal />
+
+                                    </div>
                                   }}
                                 />
                               );
@@ -99,7 +105,11 @@ class RoutesClass extends Component {
                   render={(props) => {
                     if (component) {
                       let PageComponent = CodeSplitter.getComponent(name);
-                      return <PageComponent />;
+                      return <div>
+                        <PageComponent />;
+                        <Modal />
+                      </div>
+
                     }
 
                     if (redirect) {
@@ -115,6 +125,7 @@ class RoutesClass extends Component {
             }
           )}
         </Suspense>
+        <NotificationContainer/>
       </Router>
     );
   }

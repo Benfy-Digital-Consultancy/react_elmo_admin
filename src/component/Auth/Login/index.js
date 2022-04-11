@@ -9,19 +9,46 @@ import Checkbox from '@mui/material/Checkbox';
 import { strings } from "service/helpers/Constants";
 import { BsCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { request } from "service";
+import {Toast} from 'service/toast'
 
+import { NotificationManager } from "react-notifications";
+import endponts from "service/endponts";
+import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
 
 const LoginComp = () => {
   const { register, handleSubmit, errors, reset } = useForm();
   const [mailId, setmainId] = useState("");
   const [password, setpassword] = useState("");
 
+
+
+
   const onSubmit = (inputs) => {
-    try {
+    console.log(inputs);
+    request({
+      url: endponts.Endpoints.login,
+      method: endponts.APIMethods.POST,
+      data: {
+        "email": inputs.mailId,
+        "password": inputs.password
+      },
+      isLoader : true
+    }).then(res => {
+      let {data} = res.data;
+      localStorage.setItem('token',data.token)
+      localStorage.setItem('userData',JSON.stringify(data))
       history.push("/admin/dashboard");
-    } catch (err) { }
+    })
   };
+
+
+
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
+
+
   return (
     <div>
       <div className="container-fluid">
@@ -65,15 +92,15 @@ const LoginComp = () => {
                         <FormErrorMessage
                           error={errors.mailId}
                           messages={{
-                            required: "Mail ID is required",
-                            pattern: "Invalid Mail ID",
+                            required: "Please enter mail id",
+                            pattern: "Please enter a valid mail id",
                           }}
                         />
                       </div>
                       <div className="mt-4">
                         <label className="font-bold-16">Password *</label>
                         {/* <div className="input_field"> */}
-                        <InputBox
+                        <PasswordInputBox
                           errors={errors}
                           value={password}
                           placeholder="Enter Password"
@@ -88,7 +115,7 @@ const LoginComp = () => {
                         <FormErrorMessage
                           error={errors.password}
                           messages={{
-                            required: "Password is required",
+                            required: "Please enter password",
                           }}
                         />
                       </div>

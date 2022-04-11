@@ -7,9 +7,17 @@ import FormInput from "component/common/FormInput";
 import NormalMultiSelect from "component/common/NormalMultiSelect";
 import NormalButton from "component/common/NormalButton/NormalButton";
 import indian_flag from 'assets/images/indian_flag.png'
+import { createBrowserHistory } from 'history';
 
 const CreateUser = (props) => {
     let history = useHistory();
+
+
+
+
+
+    const onClickCancel = () => {
+    }
 
     return (
         <>
@@ -37,8 +45,8 @@ const CreateUser = (props) => {
                         <div className="row">
                             <div className="col-2">
                                 <div className="countryCode">
-                                    <img src={indian_flag} className="flag"/>
-                                </div>  
+                                    <img src={indian_flag} className="flag" />
+                                </div>
                             </div>
                             <div className="col-10"><FormInput /></div>
                         </div>
@@ -55,7 +63,7 @@ const CreateUser = (props) => {
                     </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col-2"><NormalButton outlineButton label="Cancel" className="font-bold-16" /></div>
+                    <div className="col-2"><NormalButton outlineButton onClick={onClickCancel} label="Cancel" className="font-bold-16" /></div>
                     <div className="col-2"><NormalButton dasboardButton label="Add" /></div>
                 </div>
             </div>

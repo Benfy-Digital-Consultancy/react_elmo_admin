@@ -10,6 +10,9 @@ import { strings } from "service/helpers/Constants";
 import { BsCheck } from "react-icons/bs";
 import { AppBack } from "component/common/AppBack";
 import { Link } from "react-router-dom";
+import { request } from "service";
+import endponts from "service/endponts";
+import moment from "moment";
 
 
 const ForgotPassword = () => {
@@ -18,9 +21,23 @@ const ForgotPassword = () => {
     const [password, setpassword] = useState("");
 
     const onSubmit = (inputs) => {
-        try {
-            history.push("/admin/dashboard");
-        } catch (err) { }
+
+        let currentDate = moment().utcOffset('+05:30').format("DD-MM-YYYY hh:mm:ss")
+        request({
+            url: endponts.Endpoints.forgotPassword,
+            method:endponts.APIMethods.POST,
+            data:{
+                email:inputs.mailId,
+                requestedDateTime:currentDate
+            }
+        }).then(()=>{
+
+            history.push({
+                    pathname: "/auth/verification",
+                    state: { email: inputs.mailId }
+                });
+        })
+
     };
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     return (
@@ -76,9 +93,7 @@ const ForgotPassword = () => {
                                                 <AppBack onClick={() => history.goBack()} label="Back to Login" />
                                             </div>
                                             <div className="mt-5">
-                                                <Link to="/auth/verification">
                                                     <NormalButton loginButton label="Submit" />
-                                                </Link>
                                             </div>
 
                                         </form>
