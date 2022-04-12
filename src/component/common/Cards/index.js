@@ -4,7 +4,19 @@ import { BiUserCheck } from "react-icons/bi";
 import { AiOutlineRise, AiOutlineFall } from "react-icons/ai";
 import { FaSchool } from "react-icons/fa";
 
-const Cards = () => {
+const Cards = (props) => {
+
+
+
+    const getPercentage = (data) => {
+        // let {variationInPercentage} = data;
+
+        return data?.variationInPercentage.toFixed(2);
+    }
+
+    const checkStatus = (data) =>{
+        return data?.variationInPercentage >= 0;
+    }
     return (
         <>
             <div className='row'>
@@ -15,10 +27,15 @@ const Cards = () => {
                         </div>
                         <div className="ml-3">
                             <label className="font-bold-14 mt-2 total_user">Total User</label>
-                            <h6 className="font-bold-21 user_count ">6236</h6>
+                            <h6 className="font-bold-21 user_count ">{props?.data?.user?.count}</h6>
                             <div>
-                                <span><AiOutlineRise color="228B22" /></span>
-                                <span className="count_number">4.07%</span>
+                                {
+                                    checkStatus(props?.data?.user) ? 
+                                    <span><AiOutlineRise color="228B22" /></span> :
+                                    <span><AiOutlineFall color="FC476E" /></span>
+                                }
+                               
+                                <span className={checkStatus(props?.data?.user) ? "count_number" : "count_number_two"}>{getPercentage(props?.data?.user)}%</span>
                                 <span className="month">Last Month</span>
                             </div>
 
@@ -33,10 +50,14 @@ const Cards = () => {
                         </div>
                         <div className="ml-3">
                             <label className="font-bold-14 mt-2 total_user">Total School </label>
-                            <h6 className="font-bold-21 user_count ">5343</h6>
+                            <h6 className="font-bold-21 user_count ">{props?.data?.school?.count}</h6>
                             <div>
-                                <span><AiOutlineFall color="FC476E" /></span>
-                                <span className="count_number_two">4.07%</span>
+                            {
+                                    checkStatus(props?.data?.school) ? 
+                                    <span><AiOutlineRise color="228B22" /></span> :
+                                    <span><AiOutlineFall color="FC476E" /></span>
+                                }
+                                <span className="count_number_two">{getPercentage(props?.data?.school)}%</span>
                                 <span className="month">Last Month</span>
                             </div>
 

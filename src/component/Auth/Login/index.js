@@ -11,8 +11,7 @@ import { BsCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { request } from "service";
 import {Toast} from 'service/toast'
-
-import { NotificationManager } from "react-notifications";
+import { createHashHistory } from 'history'
 import endponts from "service/endponts";
 import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
 

@@ -36,16 +36,21 @@ export const request = ({
     }).catch(({ response }) => {
         console.log(response,"error");
         showLoader(false);
-        let { status, data } = response;
-        let { message } = data;
-        Toast({ type: "error", message: message });
-
-        if (status === 401) {
-            let history = useHistory()
-            //clear and navigate to login
-            history.replace('/auth/login');
-
+        if(response){
+            let { status, data } = response;
+            let { message } = data;
+            Toast({ type: "error", message: message });
+    
+            if (status === 401) {
+                let history = useHistory()
+                //clear and navigate to login
+                history.replace('/auth/login');
+    
+            }
+        }else{
+            Toast({ type: "error", message: 'Not able to connect the server. Please try again later' });
         }
+       
         return reject(response)
     })
 

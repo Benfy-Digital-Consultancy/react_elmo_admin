@@ -12,6 +12,7 @@ const FormInput = ({
   error = "",
   icons = false,
   GB = false,
+  disabled = false,
   onWheel = "",
   messages,
 }) => {
@@ -20,8 +21,9 @@ const FormInput = ({
       <input
         name={name}
         placeholder={placeholder}
-        className="formInputBox font-regular-14"
+        className={"formInputBox font-regular-14 "+ (disabled ? 'formDiabled':'')}
         ref={register}
+        disabled={disabled}
         defaultValue={value}
         type={type}
         maxlength={maxlength}

@@ -1,8 +1,14 @@
 const Endpoints = {
-    login:'/login',
-    forgotPassword:'/forgotPassword',
-    verifyOTP:'/verifyOTP',
-    resetPassword:'/resetPassword',
+    login:'/user/admin/login',
+    forgotPassword:'/user/admin/forgotPassword',
+    verifyOTP:'/user/admin/verifyOTP',
+    resetPassword:'/user/admin/resetPassword',
+    commonDashboard:'/dashboard/admin/commonDashboard',
+    boardOnboardAnalytics:'/dashboard/admin/boardOnboardAnalytics',
+    userLists:'/user/admin/subAdminList',
+    updateSubAdminStatus:'/user/admin/updateSubAdminStatus',
+    createSubAdmin:'/user/admin/createSubAdmin',
+    updateSubAdmin:'/user/admin/updateSubAdmin',
 }
 
 

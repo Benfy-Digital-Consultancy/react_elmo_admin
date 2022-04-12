@@ -13,104 +13,26 @@ function onChange(checked) {
 }
 
 const UserOnBoardTable = (props) => {
-    const [pageLimit, setPageLimit] = useState(10);
-    const [page, setPage] = useState(1);
-    const [tableData, setTableData] = useState([
-        {
-            sno: "1",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-            
-        },
-        {
-            sno: "2",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-           
-        },
-        {
-            sno: "3",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-           
-        },
-        {
-            sno: "4",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-           
-        },
-        {
-            sno: "5",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch onChange={onChange} />,
-           
-        },
-        {
-            sno: "6",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-          
-        },
-        {
-            sno: "7",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-           
-        },
-        {
-            sno: "8",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch onChange={onChange} />,
-           
-        },
-        {
-            sno: "9",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch defaultChecked onChange={onChange} />,
-            
-        },
-        {
-            sno: "10",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch onChange={onChange} />,
-           
-        },
-        {
-            sno: "11",
-            school_id: "Ashwin Raj",
-            school_logo: "AshwinRaj@gmail.com",
-            school_name: "+91 9038201928",
-            board: <Switch onChange={onChange} />,
-           
-        },
+    const [pageLimit, setPageLimit] = useState(props.pageLimit);
+    const [page, setPage] = useState(props.page);
+    const [tableData, setTableData] = useState([])
+    const [pageMeta, setPageMeta] = useState({})
 
-    ])
 
     useEffect(() => {
-        setPage(1);
-        setPageLimit(10);
-    }, [tableData]);
+        setTableData(props?.lists);
+        setPageMeta(props?.pageMeta);
+        setPage(props.page)
+        setPageLimit(props.pageLimit)
+    }, [props]);
+
+    const calculateSNo=(index)=>{
+        if(page == 1){
+            return (index +1)
+        }
+
+        return parseInt(pageLimit) + (index + 1)
+    }
     return (
         <>
             <div>
@@ -118,42 +40,51 @@ const UserOnBoardTable = (props) => {
                     className="table-block"
                     headerDetails={UserOnBoardHeader}
                     handlePageSize={(pageSize) => {
-                        setPage(1);
                         setPageLimit(pageSize);
+                        if(pageSize > pageMeta.totalPages){
+                            setPage(1);
+                            props.setPageLimit(1,pageSize)
+                        }else{
+                            props.setPageLimit(page,pageSize)
+                        }
                     }}
                     pageNumber={page}
                     pageSize={pageLimit}
-                    pageChange={setPage}
-                    totalPages={tableData.length / pageLimit}
+                    pageChange={(e)=> {
+                        setPage(e);
+                        props.onChangePage(e,pageLimit)
+                    }}
+                    totalPages={pageMeta.totalPages}
                 >
                     {tableData?.length > 0 ? (
-                        tableData.map((item, index) => {
+                        tableData?.map((item, index) => {
                             return (
-                                page * pageLimit >= index + 1 &&
-                                (page - 1) * pageLimit < index + 1 && (
                                     <React.Fragment key={index}>
                                         <tr className="table_row">
-                                            <td align="center">{item.sno}</td>
-                                            <td align="center">{item.school_id}</td>
-                                            <td align="center">{item.school_logo}</td>
-                                            <td align="center">{item.school_name}</td>
-                                            <td align="center">{item.board}</td>
+                                            <td align="center">{calculateSNo(index)}</td>
+                                            <td align="center">{item.firstName}</td>
+                                            <td align="center">{item.email}</td>
+                                            <td align="center">{item.countryCode + " " + item.mobileNumber}</td>
+                                            <td align="center">
+                                                <Switch
+                                                    checked={item.userStatus == 1}
+                                                    onChange={(e)=> props.onSwitchChange(e,item)} />
+                                            </td>
                                             <td align="center">
                                                 <Tooltip title={<div>
-                                                    <div onClick={props.onClickEdit} className="mt-1"><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
-                                                    <div onClick={props.onClickDelete} className="mt-3 mb-2"><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
+                                                    <div onClick={()=>props.onClickEdit(item)} className="mt-1"><span><AiOutlineEdit color="#8F9295" /></span><span className="tooletip_icon">Edit</span></div>
+                                                    <div onClick={()=>props.onClickDelete(item)} className="mt-3 mb-2"><span><AiOutlineDelete color="#8F9295" /></span><span className="tooletip_icon">Delete</span></div>
                                                 </div>} placement="bottomRight">
                                                     <label className="tooletip_lable">...</label>
                                                 </Tooltip>
                                             </td>
                                         </tr>
                                     </React.Fragment>
-                                )
                             );
                         })
                     ) : (
                         <td colSpan={9} className="text-center">
-                            noData
+                            No Data
                         </td>
                     )}
                 </TableWrapper>

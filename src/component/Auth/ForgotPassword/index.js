@@ -21,7 +21,6 @@ const ForgotPassword = () => {
     const [password, setpassword] = useState("");
 
     const onSubmit = (inputs) => {
-
         let currentDate = moment().utcOffset('+05:30').format("DD-MM-YYYY hh:mm:ss")
         request({
             url: endponts.Endpoints.forgotPassword,

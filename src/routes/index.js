@@ -1,11 +1,12 @@
 import React, { Component, Suspense, useRef } from "react";
-import { Route, Router, Redirect } from "react-router-dom";
+import { Route, Router, Redirect,Switch } from "react-router-dom";
 import Routers from "./routes";
 import * as Layout from "../layout";
 import { history } from "../helpers";
 import CodeSplitter from "helpers/CodeSplitter";
 import Modal from "component/modal";
 import { NotificationContainer } from "react-notifications";
+import NotFound from "pages/NotFound";
 
 class RoutesClass extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class RoutesClass extends Component {
                               );
 
                               return (
+                                <Switch>
                                 <Route
                                   path={path + childrenPath}
                                   exact={exact}
@@ -85,6 +87,8 @@ class RoutesClass extends Component {
                                     </div>
                                   }}
                                 />
+                                </Switch>
+
                               );
                             }
                           )}
@@ -98,34 +102,37 @@ class RoutesClass extends Component {
               CodeSplitter.addComponent(componentPath, name);
 
               return (
-                <Route
-                  path={path}
-                  exact={exact}
-                  key={component || 2322}
-                  render={(props) => {
-                    if (component) {
-                      let PageComponent = CodeSplitter.getComponent(name);
-                      return <div>
-                        <PageComponent />;
-                        <Modal />
-                      </div>
+                <Switch>
+                  <Route
+                    path={path}
+                    exact={exact}
+                    key={component || 2322}
+                    render={(props) => {
+                      if (component) {
+                        let PageComponent = CodeSplitter.getComponent(name)
+                        return <div>
+                          <PageComponent />
+                          <Modal />
+                        </div>
 
-                    }
-
-                    if (redirect) {
-                      if (props.location.pathname == path) {
-                        return <Redirect to={redirect} />;
                       }
-                    }
 
-                    return <div></div>;
-                  }}
-                />
-              );
+                      if (redirect) {
+                        if (props.location.pathname == path) {
+                          return <Redirect to={redirect} />
+                        }
+                      }
+
+                      return <div></div>
+                    }}
+                  />
+                </Switch>
+              )
             }
           )}
+
         </Suspense>
-        <NotificationContainer/>
+        <NotificationContainer />
       </Router>
     );
   }

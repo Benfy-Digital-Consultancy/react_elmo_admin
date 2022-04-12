@@ -1,4 +1,7 @@
+import NotFound from "pages/NotFound";
+
 const routers = [
+
   {
     path: "/",
     redirect: "/auth",
@@ -42,7 +45,8 @@ const routers = [
         name: "ResetPassword",
         auth: false,
         exact: true,
-      }
+      },
+
     ],
   },
 
@@ -137,6 +141,24 @@ const routers = [
       },
 
     ],
+
   },
-];
-export default routers;
+  
+  // {
+  //   component: "NotFound",
+  //   path: "/pageNotFound",
+  //   componentPath: "pages/NotFound/index",
+  //   auth: false,
+  //   exact: true,
+  // },
+  // {
+  //   component: "MainLayout",
+  //   path: "*",
+  //   redirect: "/pageNotFound",
+  //   componentPath: "pages/NotFound/index",
+  //   auth: false,
+  //   exact: true,
+  // }
+
+]
+export default routers

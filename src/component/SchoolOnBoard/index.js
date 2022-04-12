@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './styles.scss'
 import { AiOutlineSearch } from "react-icons/ai";
 import NormalButton from "component/common/NormalButton/NormalButton";
-import SelectFilter from "component/common/Select";
+// import SelectFilter from "component/common/Select";
 import 'antd/dist/antd.css';
 import { Link } from "react-router-dom";
 import SchoolOnBoardTable from "./SchoolOnBoardTable";
@@ -42,11 +42,11 @@ const SchoolOnBoardComp = (props) => {
                 </div>
                 <div className="gender_filter">
                     <label className="mr-3 font-bold-14">Board</label>
-                    <SelectFilter
+                    {/* <SelectFilter
                         optionOne="All"
                         optionTwo="Matric"
                         optionThree="CBSC"
-                    />
+                    /> */}
                 </div>
             </div>
             <SchoolOnBoardTable 
