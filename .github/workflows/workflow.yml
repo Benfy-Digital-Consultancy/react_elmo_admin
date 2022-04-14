@@ -61,7 +61,7 @@ jobs:
 
             Please check the changes in below link
 
-            http://43.204.75.148:3001/
+            http://65.2.65.214:3001/
       # - name: Run a multi-line script
       #   run: |
       #     mkdir ./test
