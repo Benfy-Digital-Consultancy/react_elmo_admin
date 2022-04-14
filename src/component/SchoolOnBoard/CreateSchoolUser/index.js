@@ -340,7 +340,7 @@ const CreateSchoolUser = (props) => {
                             <FormErrorMessage
                                 error={errors.schoolAddress}
                                 messages={{
-                                    required: "Please enter Email Id",
+                                    required: "Please enter School Address",
                                 }}
                             />
                         </div>

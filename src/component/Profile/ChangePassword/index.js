@@ -11,6 +11,7 @@ import { Toast } from "service/toast";
 import FormErrorMessage from "component/common/ErrorMessage";
 import { request } from "service";
 import endponts from "service/endponts";
+import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
 
 const ChangePassword = (props) => {
     let history = useHistory();
@@ -55,7 +56,7 @@ const ChangePassword = (props) => {
                     <div className="row pt-4">
                         <div className="col-6">
                             <label className="font-regular-16">Current Password *</label>
-                            <FormInput
+                            <PasswordInputBox
                                 errors={errors}
                                 type={"text"}
                                 value={currentPassword}
@@ -72,7 +73,7 @@ const ChangePassword = (props) => {
                         </div>
                         <div className="col-6">
                             <label className="font-regular-16">New Password *</label>
-                            <FormInput
+                            <PasswordInputBox
                                 errors={errors}
                                 type={"text"}
                                 value={newPassword}
@@ -91,7 +92,7 @@ const ChangePassword = (props) => {
                     <div className="row pt-4">
                         <div className="col-6">
                             <label className="font-regular-16">Confirm Password *</label>
-                            <FormInput
+                            <PasswordInputBox
                                 errors={errors}
                                 type={"text"}
                                 value={confirmPassword}
@@ -109,7 +110,7 @@ const ChangePassword = (props) => {
 
                     </div>
 
-                    <div className="row mt-3">
+                    <div className="row mt-5">
                         <div className="col-2"><NormalButton onClick={() => history.goBack()} outlineButton label="Cancel" className="font-bold-16" /></div>
                         <div className="col-2"><NormalButton dasboardButton label="Change Password" /></div>
                     </div>
