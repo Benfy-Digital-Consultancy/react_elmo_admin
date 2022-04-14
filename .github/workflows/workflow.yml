@@ -15,11 +15,11 @@ jobs:
         env:
           HOST: ${{ secrets.HOST_DNS }}
           USERNAME: ${{ secrets.USERNAME }}
-          PORT: 22
           KEY: ${{ secrets.EC2_SSH_KEY }}
         with:
           source: "/test.txt"
           target: "/home/node_deploy"
+          strip_components: 1
 
 # jobs:
 #   deploy:
