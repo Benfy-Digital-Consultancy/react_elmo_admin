@@ -15,7 +15,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: test.txt
-          remote: ~/home/
+          remote: ~/home/node_deploy
           host: ${{ secrets.HOST_DNS }}
           port: 22
           username: ${{ secrets.USERNAME }}
