@@ -12,6 +12,10 @@ export class NormalButton extends Component {
       disabled = false,
       authButton = false,
       loginButton = false,
+      dasboardButton = false,
+      outlineButton = false,
+      outlineEditButton = false,
+
       rightIcon = "",
     } = this.props;
 
@@ -23,6 +27,9 @@ export class NormalButton extends Component {
           className={`cursor-pointer 
                      ${authButton ? "authButton" : ""}
                      ${loginButton ? "loginButton" : ""}
+                     ${dasboardButton ? "dasboardButton" : ""}
+                     ${outlineButton ? "outlineButton" : ""}
+                     ${outlineEditButton ? "outlineEditButton" : ""}
 
                      ${className}`}
           onClick={onClick}

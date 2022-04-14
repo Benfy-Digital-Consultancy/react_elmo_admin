@@ -95,24 +95,19 @@ class NormalMultiSelect extends Component {
       }),
       singleValue: (base) => ({
         ...base,
-        color: "#222222",
+        color: "#000000",
         fontWeight: 600,
       }),
       control: (base) => ({
         ...base,
-        borderRadius: 4,
-        border: "1px solid #EEEEEE",
+        borderRadius: 0,
+        border: "0.25px solid #C0C0C0",
         outline: "0",
-        background: "#FFFFFF",
+        background: "#F9F9F9",
         height: 42,
-        boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
         paddingRight: 10,
       }),
     };
-    //     background: #FFFFFF;
-    // border: 1px solid #EEEEEE;
-    // box-sizing: border-box;
-    // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     return (
       <Select
         className={className}

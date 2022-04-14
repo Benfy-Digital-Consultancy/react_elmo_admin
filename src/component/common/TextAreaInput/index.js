@@ -1,0 +1,42 @@
+import React from "react";
+import "./formInput.scss";
+
+const TextAreaInput = ({
+  placeholder = "",
+  register = {},
+  value = "",
+  type = "text",
+  onChange,
+  name = "",
+  maxlength = "",
+  error = "",
+  icons = false,
+  GB = false,
+  disabled = false,
+  onWheel = "",
+  messages,
+  style={}
+}) => {
+  return (
+    <>
+      <textarea
+        name={name}
+        placeholder={placeholder}
+        className={"formInputBox font-regular-14 "+ (disabled ? 'formDiabled':'')}
+        ref={register}
+        disabled={disabled}
+        style={style}
+        defaultValue={value}
+        draggable={false}
+        type={type}
+        rows={3}
+        maxlength={maxlength}
+        onWheel={(event) => event.currentTarget.blur()}
+      />
+      <span className="text-danger fs-13">
+        {error?.type && messages[error.type]}
+      </span>
+    </>
+  );
+};
+export default TextAreaInput;

@@ -11,11 +11,23 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
-import grid from "../../../assets/icons/grid.png";
-import user from "../../../assets/icons/user.png";
 import settings from "../../../assets/icons/settings.png";
-
+import { HiOutlineUsers } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
+import { BsGrid1X2 } from "react-icons/bs";
+import { FaSchool } from "react-icons/fa";
+import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineLogout } from "react-icons/hi";
+import active_dashboard from "assets/images/active_dashboard.svg"
+import active_profile from "assets/images/active_profile.svg"
+import active_school from "assets/images/active_school.png"
+import active_user from "assets/images/active_user.svg"
+
+
+import inactive_dashboard from "assets/images/inactive_dashboard.svg"
+import inactive_profile from "assets/images/inactive_profile.png"
+import inactive_school from "assets/images/inactive_school.png"
+import inactive_user from "assets/images/inactive_user.png"
 
 import "./style.scss";
 
@@ -23,14 +35,34 @@ const navLink = [
   {
     to: "/admin/dashboard",
     label: "Dashboard",
-    iconName: grid,
+    activeImg:active_dashboard,
+    inactiveImg:inactive_dashboard
   },
-
   {
-    to: "/admin/settings",
-    label: "Settings",
-    iconName: settings,
+    to: "/admin/user-onboard",
+    label: "User Onboard",
+    activeImg:active_user,
+    inactiveImg:inactive_user
   },
+  {
+    to: "/admin/school-onboard",
+    label: "School Onboard",
+    activeImg:active_school,
+    inactiveImg:inactive_school
+  },
+  {
+    to: "/admin/profile",
+    label: "Profile Settings",
+    activeImg:active_profile,
+    inactiveImg:inactive_profile
+  },
+];
+const logout = [
+  {
+    to: "/auth/login",
+    label: "Log out",
+    iconName: <HiOutlineLogout size={25} />
+  }
 ];
 
 function Sidebar({ classes, window }) {
@@ -45,13 +77,10 @@ function Sidebar({ classes, window }) {
   const drawer = (
     <div>
       <div className={classes.toolbar}>
-        {/* <div className="text-center  pt-4 pb-5">
-          <img src={logo} alt="logo"></img>
-        </div> */}
       </div>
       <List className={classes.nav} style={{ textDecoration: "none" }}>
         {navLink.map(
-          ({ to, label, iconName, iconTransparent, nestedChild }, index) => (
+          ({ to, label, activeImg,inactiveImg, iconTransparent, nestedChild }, index) => (
             <>
               <NavLink
                 key={index}
@@ -70,7 +99,12 @@ function Sidebar({ classes, window }) {
                       <span className={
                         location.pathname === to ? "activeBarImg" : "inactiveBarImg"
                       }>
-                        <img src={iconName} />
+                        {/* {iconName} */}
+                        <img
+                        className={
+                          location.pathname === to ? "activebar-icon" : "inactivebar-icon"
+                        }
+                          src={location.pathname === to ? activeImg : inactiveImg}/>
                       </span>
 
                       <span
@@ -88,6 +122,48 @@ function Sidebar({ classes, window }) {
           )
         )}
       </List>
+      <div className="logout_list">
+        <List className={classes.nav} style={{ textDecoration: "none" }}>
+          {logout.map(
+            ({ to, label, iconName, iconTransparent, nestedChild }, index) => (
+              <>
+                <NavLink
+                  key={index}
+                  to={to}
+                  onClick={to !== "/something" ? () => setActiveIndex(index) : ""}
+                  style={{ textDecoration: "none" }}
+                >
+                  <ListItem
+                    button
+                    className={
+                      location.pathname === to ? "active-div" : "inActive-div"
+                    }
+                  >
+                    <div>
+                      <ListItemText>
+                        <span className={
+                          location.pathname === to ? "activeBarImg" : "inactiveBarImg"
+                        }>
+                          {iconName}
+                        </span>
+
+                        <span
+                          className={
+                            location.pathname === to ? "activeBar" : "inActiveBar"
+                          }
+                        >
+                          {label}
+                        </span>
+                      </ListItemText>
+                    </div>
+                  </ListItem>
+                </NavLink>
+              </>
+            )
+          )}
+        </List>
+      </div>
+
     </div>
   );
 

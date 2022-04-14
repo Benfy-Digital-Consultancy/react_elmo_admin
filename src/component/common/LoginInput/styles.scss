@@ -1,0 +1,16 @@
+.logInput {
+    background: #F9F9F9;
+    border: 0.25px solid #C0C0C0;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    padding: 9px 12px;
+    &::placeholder {
+      font-style: normal;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      color: #7c7c7c;
+    }
+  }
+  

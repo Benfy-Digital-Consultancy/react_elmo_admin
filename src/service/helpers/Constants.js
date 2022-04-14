@@ -40,13 +40,9 @@ export const mainLayoutStyle = makeStyles((theme) => ({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth,
-    backgroundColor: "#FBFBFB",
-    // border: "1px solid #D2D2D2",
-    // borderTopL: "none",
     marginTop: "65px",
     backgroundColor: "#FFFFFF;",
-    width: "14%",
+    width: "16%",
   },
   content: {
     flexGrow: 1,
@@ -59,7 +55,7 @@ export const mainLayoutStyle = makeStyles((theme) => ({
   },
 }));
 
-// scheme details
+// dashboard header
 export const SchemeDetailsHeader = [
   { label: "S.No" },
   { label: "School ID" },
@@ -70,9 +66,36 @@ export const SchemeDetailsHeader = [
 
 ];
 
+// user on board header
+export const UserOnBoardHeader = [
+  { label: "S.No" },
+  { label: "User Name" },
+  { label: "Email ID" },
+  { label: "Phone Number" },
+  { label: "Status" },
+  { label: "Action" },
+];
 
+// user on board header
+export const NotificationHeader = [
+  { label: "S.No" },
+  { label: "Date" },
+  { label: "Title" },
+  { label: "Description" },
+];
 
+// School on board header
+export const SchoolOnBoardHeader = [
+  { label: "S.No" },
+  { label: "School ID" },
+  { label: "School Logo" },
+  { label: "School Name" },
+  { label: "Board" },
+  { label: "Email ID" },
+  { label: "Status" },
+  { label: "Action" },
+];
 
 export const strings = {
-  elmo:'Elmo'
+  elmo: 'Elmo'
 }

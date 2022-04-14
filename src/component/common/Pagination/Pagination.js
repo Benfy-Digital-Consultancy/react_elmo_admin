@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Pagination.scss";
 import ReactPaginate from "react-paginate";
 
@@ -13,7 +13,6 @@ const Pagination = (props) => {
   } = props;
 
   const options = [
-    pageOption === true && { value: 1, label: "1" },
     { value: 10, label: "10" },
     { value: 20, label: "20" },
     { value: 30, label: "30" },

@@ -6,7 +6,7 @@ margin: 6px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #ffffff;
@@ -18,14 +18,11 @@ margin: 6px;
 }
 
 .activeBarImg {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  text-decoration: none !important;
+  color: #20B169;
+    background-color: white;
+    border-radius: 18px;
+    text-decoration: none !important;
+    padding: 8px;
   :hover {
     text-decoration: none !important;
   }
@@ -35,7 +32,7 @@ margin: 6px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #333333;
@@ -46,12 +43,6 @@ margin: 6px;
   }
 }
 .inactiveBarImg{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
   color: #333333;
   text-decoration: none !important;
   :hover {
@@ -72,4 +63,19 @@ margin: 6px;
 }
 .makeStyles-toolbar-6{
 min-height: 0px !important;
+}
+.logout_list{
+  position: relative;
+  top: 340px;
+  border-top: 1px solid #DDDFE1;
+}
+
+.inactivebar-icon{
+  width: 20px;
+  height: 18px;
+}
+
+.activebar-icon{
+  width: 20px;
+  height: 16px;
 }

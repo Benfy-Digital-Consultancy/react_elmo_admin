@@ -1,0 +1,29 @@
+.notiy-title{
+    line-height: 64px;
+}
+.current-notify{
+    color:#20B169;
+}
+.notify-card{
+    background: #FFFFFF;
+border-radius: 16px;
+padding: 12px;
+margin-bottom: 12px;
+}
+.empty_div{
+    width: 30px;
+    height: 30px;
+    background-color: #D3F4E4;
+    border-radius: 8px;
+}
+.notify_content{
+    display: flex;
+    align-items: center;
+    p{
+        margin-bottom: 0px !important;
+        margin-left: 12px;
+    }
+}
+.notify-sub-title{
+    color: #222222;
+}

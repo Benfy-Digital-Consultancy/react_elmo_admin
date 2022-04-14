@@ -7,7 +7,10 @@ import { Provider } from "react-redux";
 import { store } from "./helpers";
 import "./assets/scss/index.scss";
 // import "font-awesome/css/font-awesome.min.css";
+import "react-notifications/lib/notifications.css";
 
+import dotenv from 'dotenv'
+dotenv.config()
 ReactDOM.render(
   <Provider store={store}>
     <Routes />

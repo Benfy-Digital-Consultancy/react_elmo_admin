@@ -1,0 +1,91 @@
+.profile-title{
+    line-height: 64px;
+}
+ // create user page css
+ .create_header{
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 0px 0px 6px 6px;
+    padding: 30px;
+    height: 550px;
+    .profile-content{
+      color: #0655A3;
+    }
+    .blank{
+      border-bottom: 1px solid #cfcfcf;
+    }
+    .profile-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .profile-lable{
+      color: #555555;
+    }
+    .profile-lable-content{
+      color: #222222;
+    }
+    .change{
+      color: #20B169;
+    }
+    .profile-footer{
+    display: flex;
+    align-items: center;
+    label{
+      margin-bottom: 0px !important;
+    }
+    span{
+      margin-bottom: 6px;
+    margin-left: 8px;
+    text-decoration: underline;
+    }
+    }
+  }
+  .img-align{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  
+  .user-profile-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 85px;
+  }
+  .profile-view-content{
+    margin-top: -126px;
+  }
+
+  .edit-icon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+  transform: translate(230%, -76%);
+  }
+
+
+  .countryCode{
+    background: #F9F9F9;
+    border: 0.25px solid #C0C0C0;
+    box-sizing: border-box;
+    width: 60px;
+    outline: none;
+    height: 40px;
+    display: flex;
+    padding: 9px 12px;
+    justify-content: center;
+  }
+  
+  .flag{
+    height: 20px;
+    width: 30px;
+  }
+
+  .select_dropdown{
+    border: 1px solid #C7C7C7;
+    border-radius: 3px;
+    display: flex;
+}

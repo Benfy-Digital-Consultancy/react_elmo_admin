@@ -23,7 +23,9 @@ export default function TableWrapper(props) {
             <tr>
               {headerDetails?.map(({ label }, index) => (
                 <th key={index}>
-                  <div className="d-flex align-items-center justify-content-center text-center">
+                  <div className={"d-flex "} style={{
+                    paddingLeft:(label == 'S.No' || label === 'Action') ? 20 : 0
+                  }}>
                     {label}
                   </div>
                 </th>

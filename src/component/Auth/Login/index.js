@@ -7,24 +7,56 @@ import FormErrorMessage from "component/common/ErrorMessage";
 import NormalButton from "component/common/NormalButton/NormalButton";
 import Checkbox from '@mui/material/Checkbox';
 import { strings } from "service/helpers/Constants";
+import { BsCheck } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { request } from "service";
+import {Toast} from 'service/toast'
+import { createHashHistory } from 'history'
+import endponts from "service/endponts";
+import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
 
 const LoginComp = () => {
   const { register, handleSubmit, errors, reset } = useForm();
   const [mailId, setmainId] = useState("");
   const [password, setpassword] = useState("");
 
+
+
+
   const onSubmit = (inputs) => {
-    try {
+    console.log(inputs);
+    request({
+      url: endponts.Endpoints.login,
+      method: endponts.APIMethods.POST,
+      data: {
+        "email": inputs.mailId,
+        "password": inputs.password
+      },
+      isLoader : true
+    }).then(res => {
+      let {data} = res.data;
+      localStorage.setItem('token',data.token)
+      let userData = {
+          ...data.userData
+      }
+      localStorage.setItem('userData',JSON.stringify(userData))
       history.push("/admin/dashboard");
-    } catch (err) { }
+    })
   };
+
+
+
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
+
+
   return (
     <div>
       <div className="container-fluid">
         <div className="row no-gutter">
-          <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-          <div className="col-md-8 col-lg-6">
+          <div className="d-none d-md-flex col-md-4 col-lg-7 bg-image"></div>
+          <div className="col-md-8 col-lg-5 bg_color">
             <div className="login d-flex align-items-center py-3">
               <div className="container">
                 <div className="row py-5 text-center">
@@ -40,54 +72,66 @@ const LoginComp = () => {
                       Please provide the valid informations for a<br />
                       seamless sign in process
                     </p>
+                    <div className="blank mt-3 mb-3" />
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <div className="mt-5">
+                        <label className="font-bold-16">E-mail ID *</label>
+                        {/* <div className="input_field"> */}
                         <InputBox
                           errors={errors}
                           type={"text"}
                           value={mailId}
-                          placeholder="Official mail ID"
+                          placeholder="test@gmail.com"
                           name="mailId"
                           register={register({
                             required: true,
                             pattern: /\S+@\S+\.\S+/,
                           })}
                         />
+                        {/* <div className="tick_icon"><BsCheck size={25} /></div>
+                        </div> */}
+
                         <FormErrorMessage
                           error={errors.mailId}
                           messages={{
-                            required: "Mail ID is required",
-                            pattern: "Invalid Mail ID",
+                            required: "Please enter mail id",
+                            pattern: "Please enter a valid mail id",
                           }}
                         />
                       </div>
                       <div className="mt-4">
-                        <InputBox
+                        <label className="font-bold-16">Password *</label>
+                        {/* <div className="input_field"> */}
+                        <PasswordInputBox
                           errors={errors}
                           value={password}
-                          placeholder="Password"
+                          placeholder="Enter Password"
                           type="password"
                           name="password"
                           register={register({
                             required: true,
                           })}
                         />
+                        {/* <div><label className="show" >Show</label></div>
+                        </div> */}
                         <FormErrorMessage
                           error={errors.password}
                           messages={{
-                            required: "Password is required",
+                            required: "Please enter password",
                           }}
                         />
                       </div>
-                      <div className=" forgot">
+                      <div className="forgot">
                         <div><Checkbox {...label} defaultChecked color="success" />
                           <span className="small">Remeber Me</span></div>
-                        <div><span className="small" href="#">
-                          Forgot password?
-                        </span></div>
+                        <div>
+                          <Link to="/auth/forgot-password">
+                            <span className="small" href="#">
+                              Forgot password?
+                            </span></Link></div>
                       </div>
                       <div className="mt-5">
-                        <NormalButton loginButton label="login" />
+                        <NormalButton loginButton label="Login" />
                       </div>
                     </form>
                   </div>

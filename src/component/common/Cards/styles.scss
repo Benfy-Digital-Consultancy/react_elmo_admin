@@ -1,0 +1,36 @@
+.card_header{
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    .card_icon{
+        background: #FFF5E9;
+    border-radius: 8px;
+    padding: 12px;
+    }
+    .user_count{
+margin-top: -6px;
+color: #090909;
+    }
+    .total_user{
+        color:  #222222;
+        
+    }
+    .count_number{
+        color: #228B22;
+        margin-left: 3px;
+    }
+    .count_number_two{
+        color: #FC476E;
+        margin-left: 3px;
+    }
+    
+    .month{
+        margin-left: 3px;
+    color: #B9B9B9;
+    font-weight: 400;
+    font-size: 14px;
+    }
+}

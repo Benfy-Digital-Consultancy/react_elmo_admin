@@ -1,0 +1,1 @@
+{"version":3,"sources":["component/Dashboard/SettingsComp/index.js"],"names":["SettingsComp"],"mappings":"8FAAA,2BAKeA,UAHM,WACnB,OAAO","file":"static/js/13.ea014c0c.chunk.js","sourcesContent":["import React from \"react\";\n\nconst SettingsComp = () => {\n  return <div>Settings</div>;\n};\nexport default SettingsComp;\n"],"sourceRoot":""}
