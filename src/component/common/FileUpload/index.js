@@ -14,6 +14,7 @@ const FileUploadButton = ({
     GB = false,
     onWheel = "",
     messages,
+    style={},
 }) => {
     return (
         <>
@@ -22,7 +23,9 @@ const FileUploadButton = ({
                 placeholder={placeholder}
                 className="fileInputBox font-regular-14"
                 ref={register}
+                style={style}
                 defaultValue={value}
+                onChange={onChange}
                 type={type}
                 maxlength={maxlength}
                 onWheel={(event) => event.currentTarget.blur()}

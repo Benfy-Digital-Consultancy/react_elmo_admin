@@ -26,7 +26,7 @@ const CreateUser = (props) => {
     const [mobileNumber, setMobileNumber] = useState("")
     const [email, setEmail] = useState("")
     const [gender, setGender] = useState("Male")
-    const [userId, setUserId] = useState("Male")
+    const [userId, setUserId] = useState("")
     const [formStatus , setFormStatus] = useState(false)
 
     const [title, setTitle] = useState("")
@@ -36,7 +36,6 @@ const CreateUser = (props) => {
 
 
     useEffect(() => {
-        console.log(location);
         if (location.state) {
             setFormStatus(location.state.status)
             
@@ -62,6 +61,12 @@ const CreateUser = (props) => {
     }
 
     const onSubmit = (inputs) => {
+
+        if(!gender){
+            Toast({type:'error',message:'Please select gender'})
+            return
+        }
+
         if(formStatus){
             onEditUser(inputs);
             return
@@ -203,6 +208,7 @@ const CreateUser = (props) => {
                             <div className='select_dropdown'>
                                 <Select
                                     onChange={(e)=> setGender(e)}
+                                    placeholde={'Select Gender'}
                                     value={gender} style={{width:"100%",height:40,paddingTop:4,backgroundColor:'#F9F9F9',borderWidth: 0.5, borderColor:  "#C0C0C0"}}>
                                     <Option
                                      value={"Male"}>{"Male"}</Option>

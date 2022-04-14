@@ -48,7 +48,10 @@ const routers = [
       },
 
     ],
+    
+    
   },
+
 
   {
     component: "MainLayout",
@@ -139,26 +142,8 @@ const routers = [
         auth: false,
         exact: true,
       },
-
     ],
 
   },
-  
-  // {
-  //   component: "NotFound",
-  //   path: "/pageNotFound",
-  //   componentPath: "pages/NotFound/index",
-  //   auth: false,
-  //   exact: true,
-  // },
-  // {
-  //   component: "MainLayout",
-  //   path: "*",
-  //   redirect: "/pageNotFound",
-  //   componentPath: "pages/NotFound/index",
-  //   auth: false,
-  //   exact: true,
-  // }
-
 ]
 export default routers

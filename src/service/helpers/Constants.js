@@ -76,6 +76,14 @@ export const UserOnBoardHeader = [
   { label: "Action" },
 ];
 
+// user on board header
+export const NotificationHeader = [
+  { label: "S.No" },
+  { label: "Date" },
+  { label: "Title" },
+  { label: "Description" },
+];
+
 // School on board header
 export const SchoolOnBoardHeader = [
   { label: "S.No" },

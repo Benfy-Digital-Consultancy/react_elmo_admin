@@ -29,49 +29,41 @@ const DashboardComp = (props) => {
         school: res.data.data.schoolCount,
       });
     });
-  }, [])
+  }, []);
+
+
 
 
   useEffect(() => {
 
     let fromDate = ""
     let toDate = ""
-
+    var currentDate = new Date();
+    var oneWeekAgo = new Date();
+    currentDate.setDate(currentDate.getDate() + 1)
     switch (dateSelect) {
-      case 'This Week':{
-        var currentDate = new Date();
-        var oneWeekAgo = new Date();
+      case 'This Week': {
         oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-        fromDate = moment(oneWeekAgo).format("YYYY-MM-DD");
-        toDate = moment(currentDate).format("YYYY-MM-DD");;
-
         break;
       }
-      case 'This Month':{
-        var currentDate = new Date();
-        var oneWeekAgo = new Date();
+      case 'This Month': {
         oneWeekAgo.setMonth(oneWeekAgo.getMonth() - 1);
-        fromDate = moment(oneWeekAgo).format("YYYY-MM-DD");
-        toDate = moment(currentDate).format("YYYY-MM-DD");;
-
         break;
       }
-      case 'This Year':{
-        var currentDate = new Date();
-        var oneWeekAgo = new Date();
+      case 'This Year': {
         oneWeekAgo.setFullYear(oneWeekAgo.getFullYear() - 1);
-        fromDate = moment(oneWeekAgo).format("YYYY-MM-DD");
-        toDate = moment(currentDate).format("YYYY-MM-DD");;
         break;
       }
 
     }
+    fromDate = moment(oneWeekAgo).format("YYYY-MM-DD");
+    toDate = moment(currentDate).format("YYYY-MM-DD");;
 
     request({
-      url: endponts.Endpoints.boardOnboardAnalytics + "?fromDate="+fromDate+"&toDate="+toDate,
+      url: endponts.Endpoints.boardOnboardAnalytics + "?fromDate=" + fromDate + "&toDate=" + toDate,
       method: endponts.APIMethods.GET,
     }).then(response => {
-      let {data}= response.data;
+      let { data } = response.data;
       console.log(data);
       let labels = [];
       let series = [];
@@ -79,14 +71,14 @@ const DashboardComp = (props) => {
       let item = data ? data : [];
 
       item.forEach(element => {
-          labels.push(element._id);
-          series.push(element.count);
+        labels.push(element._id);
+        series.push(element.count);
       });
       let chartItem = {
-        options : {
-          labels : labels
+        options: {
+          labels: labels
         },
-        series:series
+        series: series
       }
       setChartData(chartItem)
     })
@@ -102,7 +94,7 @@ const DashboardComp = (props) => {
           data={cardData} />
       </div>
       <div>
-        
+
         <ChartComponent
           onChange={(e) => setDateSelect(e)}
           data={chartData} />
@@ -119,12 +111,20 @@ const DashboardComp = (props) => {
           {tableData.map((item, index) => {
             return (
               <tr className="table_row">
-                <td align="center">{index + 1}</td>
-                <td align="center">{item.schoolId}</td>
-                <td align="center">{item.school_logo}</td>
-                <td align="center">{item.schoolName}</td>
-                <td align="center">{item.schoolBoard}</td>
-                <td align="center">{item.email}</td>
+                <td align="left" style={{
+                  paddingLeft: 50
+                }}>{index + 1}</td>
+                <td align="left">{item.schoolId}</td>
+                <td align="center" style={{
+                  paddingRight:70
+                }}>
+                  <img
+                    className="profile_pic"
+                    src={item.profilePicture} />
+                </td>
+                <td align="left">{item.schoolName}</td>
+                <td align="left">{item.schoolBoard}</td>
+                <td align="left">{item.email}</td>
               </tr>
             )
           })}

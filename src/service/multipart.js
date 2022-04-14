@@ -1,14 +1,14 @@
-import React, { useContext, useRef } from "react";
 import axios from "axios"
 import { useHistory } from 'react-router-dom'
 import { endpoints } from "config/api";
 import { AxiosResponse, AxiosError } from 'axios'
 import { Toast } from "./toast";
 import Modal from "component/modal";
+import React, { useContext, useRef } from "react";
 
 
 
-export const request = ({
+export const requestMultipart = ({
     url,
     method,
     data,
@@ -22,11 +22,11 @@ export const request = ({
         data: data ? data : null,
         headers: {
             'Authorization': token ? 'Bearer ' + token : '',
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
         }
     };
 
-    console.log(config,"request",isLoader);
+    console.log(config,"request");
     showLoader(isLoader)
 
     axios(config).then(res => {
@@ -42,9 +42,9 @@ export const request = ({
             Toast({ type: "error", message: message });
     
             if (status === 401) {
-                // let history = useHistory()
+                let history = useHistory()
                 //clear and navigate to login
-                // history.replace('/auth/login');
+                history.replace('/auth/login');
     
             }
         }else{

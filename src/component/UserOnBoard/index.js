@@ -44,7 +44,6 @@ const UserOnBoardComp = (props) => {
             params += "&genderFilter="+gender
         }
 
-        console.log(search,"search");
         if(search){
             params += "&searchValue="+search
         }
@@ -60,8 +59,6 @@ const UserOnBoardComp = (props) => {
     }
 
     const updateUserStatus=(e,item)=>{
-        console.log(e,item);
-
         request({
             url: endponts.Endpoints.updateSubAdminStatus,
             method: endponts.APIMethods.PUT,
@@ -99,6 +96,10 @@ const UserOnBoardComp = (props) => {
                             if(e.target.value.length > 2){
                                 getUserLists(1,10,gender,e.target.value,false)
                             }
+                            
+                            if(e.target.value.length == 0){
+                                getUserLists(1,10,gender,'',false)
+                            }
                         }}
                         placeholder={"Search User ID or User Name"}
                     />
@@ -110,11 +111,6 @@ const UserOnBoardComp = (props) => {
                 </div>
                 <div className="gender_filter">
                     <label className="mr-3 font-bold-14">Gender</label>
-                    {/* <SelectFilter
-                        optionOne="All"
-                        optionTwo="Male"
-                        optionThree="Female"
-                    /> */}
                      <div className='select_dropdown'>
                                 <Select
                                     onChange={(e)=> getUserLists(1,10,e,searchBox,true)}

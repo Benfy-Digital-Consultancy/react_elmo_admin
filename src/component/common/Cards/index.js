@@ -9,12 +9,15 @@ const Cards = (props) => {
 
 
     const getPercentage = (data) => {
-        // let {variationInPercentage} = data;
-
-        return data?.variationInPercentage.toFixed(2);
+        if(data?.variationInPercentage < 0){
+            return parseFloat(data?.variationInPercentage.toString().substring(1,data?.variationInPercentage?.toString().length)).toFixed(2)
+        }else{
+            return data?.variationInPercentage.toFixed(2);
+        }
     }
 
     const checkStatus = (data) =>{
+        console.log(props?.data);
         return data?.variationInPercentage >= 0;
     }
     return (
@@ -38,7 +41,6 @@ const Cards = (props) => {
                                 <span className={checkStatus(props?.data?.user) ? "count_number" : "count_number_two"}>{getPercentage(props?.data?.user)}%</span>
                                 <span className="month">Last Month</span>
                             </div>
-
                         </div>
 
                     </div>
@@ -57,7 +59,7 @@ const Cards = (props) => {
                                     <span><AiOutlineRise color="228B22" /></span> :
                                     <span><AiOutlineFall color="FC476E" /></span>
                                 }
-                                <span className="count_number_two">{getPercentage(props?.data?.school)}%</span>
+                                <span className={checkStatus(props?.data?.school) ? "count_number" : "count_number_two"}>{getPercentage(props?.data?.school)}%</span>
                                 <span className="month">Last Month</span>
                             </div>
 

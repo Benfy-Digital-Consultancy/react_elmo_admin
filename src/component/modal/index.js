@@ -7,8 +7,11 @@ import loader from 'assets/lottie/loader.json'
 function Modal(props, ref) {
 
     const [loaders, setLoader] = useState(false);
+    const [isAuthPage, setIsAuthPage] = useState(false)
 
     const setLoaderStatus = (status) => {
+        let url = window.location.href;
+        setIsAuthPage(url.includes('auth'))
         setLoader(status)
     }
     Modal.defaultProps = {
@@ -19,7 +22,10 @@ function Modal(props, ref) {
         <div>
             {
                 loaders ?
-                    <div className='container-modal'>
+                    <div className='container-modal' 
+                        style={{
+                            paddingLeft:!isAuthPage ? 250 : 0
+                        }}>
                         <Lottie options={
                             {
                                 loop: true,

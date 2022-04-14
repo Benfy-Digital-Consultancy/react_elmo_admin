@@ -55,7 +55,6 @@ const Verification = () => {
                 setResendEnable(false)
             })
         }
-
     }
 
 
@@ -154,7 +153,6 @@ const Verification = () => {
                                             {/* <div className="row ">
                                                     <div className="col">
                                                         <FormInput 
-                                                            register={input1}
                                                             maxlength={"1"}/>
                                                     </div>
                                                     <div className="col">

@@ -36,7 +36,10 @@ const LoginComp = () => {
     }).then(res => {
       let {data} = res.data;
       localStorage.setItem('token',data.token)
-      localStorage.setItem('userData',JSON.stringify(data))
+      let userData = {
+          ...data.userData
+      }
+      localStorage.setItem('userData',JSON.stringify(userData))
       history.push("/admin/dashboard");
     })
   };
