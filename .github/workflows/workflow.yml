@@ -6,27 +6,57 @@ on:
       - "main"
 
 jobs:
-  build:
+  deploy:
+    name: "Deploy to staging"
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.17.6]
-
     steps:
-      - uses: actions/checkout@v1
-      - run: npm install -g yarn
-      - run: npm install
-      - run: CI='' npm run build
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'ap-south-1'   # optional: defaults to us-east-1
-          SOURCE_DIR: 'build'      # optional: defaults to entire repository
+          SSH_USER: ${{ secrets.USERNAME }}
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOST_DNS }}
+
+      - name: Make empty file
+        run: ssh staging 'cd /home/react/react_elmo_admin && touch sample.js'
+
+      - name: Git Hard Reset
+        run: ssh staging 'cd /home/react/react_elmo_admin && git reset --hard origin/main'
+
+      # - name: Commit the local files
+      #   run: ssh staging 'cd /home/react/react_elmo_admin && git add . && git commit -m "Local Commits"'
+      
+      
+      - name: Git pull recent files
+        run: ssh staging 'cd /home/react/react_elmo_admin && git pull origin main'
+
+      - name: Delete empty file
+        run: ssh staging 'cd /home/react/react_elmo_admin && rm -rf sample.js'
+
+      - name: Install Node Packages
+        run: ssh staging 'cd /home/react/react_elmo_admin &&  npm i'
+
+      - name: Create a Build
+        run: ssh staging 'cd /home/react/react_elmo_admin && npm run build'
+      
+      - name: Delete the existing build
+        run: ssh staging 'sudo rm -rf /home/elmo_admin/build'
+
+      - name: Move build to deploy folder
+        run: ssh staging 'sudo mv /home/react/react_elmo_admin/build /home/elmo_admin/build'
+
+      - name: Restart the server
+        run: ssh staging 'cd /home/elmo_admin && pm2 restart 1'
 
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
@@ -44,4 +74,6 @@ jobs:
 
             Deployed Successfully.
 
-            See Output: https://react-elmo-admin.s3.ap-south-1.amazonaws.com/index.html
+            Please check the changes in below link
+
+            http://65.2.65.214:3001
