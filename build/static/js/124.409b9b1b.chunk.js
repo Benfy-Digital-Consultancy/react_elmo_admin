@@ -1,0 +1,2 @@
+(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[124],{402:function(t,i,o){t.exports=o.p+"static/media/lato-v22-latin-900italic.c91b0224.eot"}}]);
+//# sourceMappingURL=124.409b9b1b.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[138],{416:function(e,o,t){e.exports=t.p+"static/media/lato-v22-latin-regular.e1b3b590.woff2"}}]);
+//# sourceMappingURL=138.aff85df3.chunk.js.map
