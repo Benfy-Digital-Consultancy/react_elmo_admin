@@ -57,7 +57,7 @@ jobs:
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
-            Deployed Successfully..
+            Deployed Successfully.
 
             Please check the changes in below link
 
