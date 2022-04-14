@@ -130,6 +130,7 @@ const LoginComp = () => {
                       <div className="mt-5">
                         <NormalButton loginButton label="Login" />
                       </div>
+                      <p>Tets githu</p>
                     </form>
                   </div>
                 </div>

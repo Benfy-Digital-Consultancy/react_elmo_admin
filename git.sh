@@ -2,6 +2,6 @@
 
 git add .
 
-git commit -m "BUS"
+git commit -m "SCP WorkFlow"
 
 git push origin main
