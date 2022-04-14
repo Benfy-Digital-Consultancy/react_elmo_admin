@@ -1,4 +1,6 @@
-!#bin/bash
+#!bin/bash
+
+npm run build
 
 git add .
 
