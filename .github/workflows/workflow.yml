@@ -10,19 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a multi-line script
-        run: |
-          mkdir ./test
-      - name: Deploy source-code
-        uses: appleboy/scp-action@master
-        env:
-          HOST: ${{ secrets.HOST_DNS }}
-          USERNAME: ${{ secrets.USERNAME }}
-          KEY: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Copy folder content recursively to remote
+        uses: garygrossgarten/github-action-scp@release
         with:
-          source: "/test.txt"
-          target: "/home/node_deploy"
-          strip_components: 1
+          local: "/test.txt"
+          remote: ~/home/node_deploy
+          host: ${{ secrets.HOST_DNS }}
+          port: 22
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{secrets.EC2_SSH_KEY}}
+      # - name: Run a multi-line script
+      #   run: |
+      #     mkdir ./test
+      # - name: Deploy source-code
+      #   uses: appleboy/scp-action@master
+      #   env:
+      #     HOST: ${{ secrets.HOST_DNS }}
+      #     USERNAME: ${{ secrets.USERNAME }}
+      #     KEY: ${{ secrets.EC2_SSH_KEY }}
+      #   with:
+      #     source: "/test.txt"
+      #     target: "/home/node_deploy"
+      #     strip_components: 1
 
 # jobs:
 #   deploy:
