@@ -14,7 +14,7 @@ jobs:
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: /test.txt
+          local: test.txt
           remote: ~/home/
           host: ${{ secrets.HOST_DNS }}
           port: 22
