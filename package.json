@@ -16,7 +16,6 @@
     "create-react-class": "^15.7.0",
     "dotenv": "^16.0.0",
     "moment": "^2.28.0",
-    "node-sass": "4.14.1",
     "react": "^16.13.1",
     "react-apexcharts": "^1.4.0",
     "react-bootstrap": "^1.6.1",
@@ -39,6 +38,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.50.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3"
   },

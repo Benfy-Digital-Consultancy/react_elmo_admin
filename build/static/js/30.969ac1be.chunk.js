@@ -1,2 +1,0 @@
-(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[30,13],{156:function(e,t,n){"use strict";n.r(t);var u=n(77),l=n(0),a=n.n(l);t.default=function(){return a.a.createElement("div",null,a.a.createElement(u.default,null))}},77:function(e,t,n){"use strict";n.r(t);var u=n(0),l=n.n(u);t.default=function(){return l.a.createElement("div",null,"Settings")}}}]);
-//# sourceMappingURL=30.969ac1be.chunk.js.map

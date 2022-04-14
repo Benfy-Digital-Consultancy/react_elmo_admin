@@ -1,2 +1,0 @@
-(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[14],{72:function(e,t,r){"use strict";r.r(t);var s=r(0),n=r.n(s);t.default=function(e){var t=e.error,r=(e.type,e.messages);return t?n.a.createElement("span",{className:"text-danger fs-13"},r[t.type]?r[t.type]:"Error in field"):null}}}]);
-//# sourceMappingURL=14.7fc45851.chunk.js.map
