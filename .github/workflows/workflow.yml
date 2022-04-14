@@ -46,9 +46,6 @@ jobs:
       - name: Install NPM Packages
         run: ssh staging 'cd /home/react/react_elmo_admin &&  npm i'
 
-      - name: Setup Node Options to open ssl legacy
-        run: ssh staging 'export NODE_OPTIONS=--openssl-legacy-provider'
-
       - name: Create a Build
         run: ssh staging 'cd /home/react/react_elmo_admin && NODE_OPTIONS="--max_old_space_size=4096 --openssl-legacy-provider" npm run build'
       
