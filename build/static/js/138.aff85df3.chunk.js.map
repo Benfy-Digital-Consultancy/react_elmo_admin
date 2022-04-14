@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets/fonts/lato-v22-latin-regular.woff2"],"names":["module","exports"],"mappings":"mFAAAA,EAAOC,QAAU,IAA0B","file":"static/js/138.aff85df3.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/lato-v22-latin-regular.e1b3b590.woff2\";"],"sourceRoot":""}

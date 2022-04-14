@@ -1,2 +1,0 @@
-(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[43,109],{128:function(e,a,t){"use strict";t.r(a);var l=t(0),n=t.n(l);t(386);a.default=function(){return n.a.createElement("div",null,n.a.createElement("div",{className:"uploadImageBox"},n.a.createElement("label",{for:"files",class:"btn"},n.a.createElement("span",{className:"add-file-btn mt-4"},"Upload Image"))),n.a.createElement("input",{id:"files",style:{visibility:"hidden"},type:"file"}))}},386:function(e,a,t){}}]);
-//# sourceMappingURL=43.09ac3269.chunk.js.map
