@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/fonts/lato-v22-latin-italic.woff"],"names":["module","exports"],"mappings":"mFAAAA,EAAOC,QAAU,IAA0B","file":"static/js/132.60997adc.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/lato-v22-latin-italic.e526c2d0.woff\";"],"sourceRoot":""}
