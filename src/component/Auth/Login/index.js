@@ -1,19 +1,16 @@
+import Checkbox from '@mui/material/Checkbox';
+import "component/Auth/Login/style.scss";
+import FormErrorMessage from "component/common/ErrorMessage";
+import InputBox from "component/common/InputBox/InputBox";
+import NormalButton from "component/common/NormalButton/NormalButton";
+import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
 import { history } from "helpers";
 import React, { useState } from "react";
-import "component/Auth/Login/style.scss";
-import InputBox from "component/common/InputBox/InputBox";
 import { useForm } from "react-hook-form";
-import FormErrorMessage from "component/common/ErrorMessage";
-import NormalButton from "component/common/NormalButton/NormalButton";
-import Checkbox from '@mui/material/Checkbox';
-import { strings } from "service/helpers/Constants";
-import { BsCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { request } from "service";
-import {Toast} from 'service/toast'
-import { createHashHistory } from 'history'
 import endponts from "service/endponts";
-import PasswordInputBox from "component/common/PasswordInput/PasswordInputBox";
+import { strings } from "service/helpers/Constants";
 
 const LoginComp = () => {
   const { register, handleSubmit, errors, reset } = useForm();
