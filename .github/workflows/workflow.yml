@@ -43,8 +43,11 @@ jobs:
       - name: Delete empty file
         run: ssh staging 'cd /home/react/react_elmo_admin && rm -rf sample.js'
 
-      - name: Install Node Packages
+      - name: Install NPM Packages
         run: ssh staging 'cd /home/react/react_elmo_admin &&  npm i'
+
+      - name: Install NPM Packages
+        run: ssh staging 'export NODE_OPTIONS=--openssl-legacy-provider'
 
       - name: Create a Build
         run: ssh staging 'cd /home/react/react_elmo_admin && npm run build'
