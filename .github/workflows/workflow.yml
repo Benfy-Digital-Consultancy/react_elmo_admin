@@ -42,6 +42,26 @@ jobs:
 
       - name: Restart the server
         run: ssh staging 'cd /home/node_deploy && pm2 restart 0'
+
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+            Deployed Successfully.
+
+            Please check the changes in below link
+
+            http://43.204.75.148:3001/
       # - name: Run a multi-line script
       #   run: |
       #     mkdir ./test
