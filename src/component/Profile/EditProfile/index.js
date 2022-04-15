@@ -165,6 +165,7 @@ const EditProfile = (props) => {
                     <input
                         type="file"
                         ref={inputRef}
+                        accept="image/*"
                         style={{
                             display: 'none'
                         }}

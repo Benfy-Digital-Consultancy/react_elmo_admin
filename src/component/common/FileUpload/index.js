@@ -23,6 +23,7 @@ const FileUploadButton = ({
                 placeholder={placeholder}
                 className="fileInputBox font-regular-14"
                 ref={register}
+                accept="image/*"
                 style={style}
                 defaultValue={value}
                 onChange={onChange}
