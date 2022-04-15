@@ -11,6 +11,7 @@ const UploadImageTextBox = () => {
       <input
         id="files"
         style={{ visibility: "hidden" }}
+        accept="image/*"
         // onChange={getImages}
         type="file"
       />

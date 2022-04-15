@@ -4,6 +4,6 @@ npm run build
 
 git add .
 
-git commit -m "Bug Fixes"
+git commit -m "New Build to staging"
 
 git push origin main

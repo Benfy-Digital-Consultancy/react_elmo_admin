@@ -120,7 +120,7 @@ const LoginComp = () => {
                       </div>
                       <div className="forgot">
                         <div><Checkbox {...label} defaultChecked color="success" />
-                          <span className="small">Remeber Me</span></div>
+                          <span className="small">Remember Me</span></div>
                         <div>
                           <Link to="/auth/forgot-password">
                             <span className="small" href="#">
