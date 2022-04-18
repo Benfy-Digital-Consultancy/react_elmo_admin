@@ -26,7 +26,7 @@ const CreateSchoolUser = (props) => {
 
     const [schoolLogo, setSchoolLogoFile] = useState(null);
     const [schoolFileName, setSchoolFileName] = useState("");
-    const [isFileUploaded,setIsFileUploaded] = useState(false)
+    const [isFileUploaded, setIsFileUploaded] = useState(false)
     const [schoolFile, setSchoolFile] = useState("");
     const [formStatus, setFormStatus] = useState(false)
     const inputRef = useRef()
@@ -109,20 +109,20 @@ const CreateSchoolUser = (props) => {
             return
         }
 
-        if(isFileUploaded){
+        if (isFileUploaded) {
             onChangeFiles((fileName) => {
 
-                handleOnSubmit(inputs,fileName)
+                handleOnSubmit(inputs, fileName)
             })
-    
-        }else{
-            handleOnSubmit(inputs,schoolFileName)
+
+        } else {
+            handleOnSubmit(inputs, schoolFileName)
         }
 
-       
+
     }
 
-    const handleOnSubmit=(inputs,fileName)=>{
+    const handleOnSubmit = (inputs, fileName) => {
         if (formStatus) {
             onEditUser(inputs, fileName);
             return
@@ -302,16 +302,12 @@ const CreateSchoolUser = (props) => {
                                 onChange={(e) => handleChange(e)} />
                             <div className="flexRow">
 
-                                <div  
-                                className="outlineButton upload_button" 
-                                onClick={()=> inputRef.current.click()}>
+                                <div
+                                    className="outlineButton upload_button"
+                                    onClick={() => inputRef.current.click()}>
                                     <p className="upload_text">Upload</p>
                                 </div>
-                                {/* <NormalButton
-                                    outlineButton
-                                   
-                                    label="Upload"
-                                    className="font-bold-16 upload_button" /> */}
+
                                 {
                                     schoolLogo && <img
                                         className="school_logo"
