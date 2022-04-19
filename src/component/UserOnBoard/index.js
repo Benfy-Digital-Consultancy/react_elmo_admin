@@ -81,10 +81,10 @@ const UserOnBoardComp = (props) => {
     return (
         <>
             <div className="onboard_title">
-                <div className=" font-bold-28">User Onboard</div>
+                <div className=" font-bold-28">Co-Admin Onboard</div>
                     <NormalButton 
                     onClick={()=> onClickEdit({},false)}
-                    dasboardButton className="font-regular-16" label="User Onboard" />
+                    dasboardButton className="font-regular-16" label="Co-Admin Onboard" />
             </div>
             <div className="search_filter mt-3">
                 <div className="searchBox">

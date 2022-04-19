@@ -82,7 +82,7 @@ const CreateUser = (props) => {
             method:endponts.APIMethods.POST,
             data:data
         }).then(res=>{
-            Toast({type:'success',message:'Subamin created successfully'});
+            Toast({type:'success',message:'Sub Admin created successfully'});
             history.goBack();
         })
     }
@@ -108,12 +108,12 @@ const CreateUser = (props) => {
     return (
         <>
             <div>
-                <AppBack onClick={() => history.goBack()} label="Back to User Onboard" />
+                <AppBack onClick={() => history.goBack()} label="Back to Co-Admin Onboard" />
             </div>
             <div className="create_header">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                        <label className="font-bold-20 user-title">{formStatus ? 'Edit User' : 'Create New User'}</label>
+                        <label className="font-bold-20 user-title">{formStatus ? 'Edit Co-Admin' : 'Create Co-Admin'}</label>
                     </div>
                     <div className="blank" />
                     <div className="row pt-4">

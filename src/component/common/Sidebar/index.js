@@ -40,7 +40,7 @@ const navLink = [
   },
   {
     to: "/admin/user-onboard",
-    label: "User Onboard",
+    label: "Co-Admin Onboard",
     activeImg:active_user,
     inactiveImg:inactive_user
   },
@@ -111,6 +111,9 @@ function Sidebar({ classes, window }) {
                         className={
                           location.pathname === to ? "activeBar" : "inActiveBar"
                         }
+                        style={{
+                          fontSize: ( location.pathname === to &&  label.length > 10)  ? 12 : 14
+                        }}
                       >
                         {label}
                       </span>
@@ -151,6 +154,8 @@ function Sidebar({ classes, window }) {
                           className={
                             location.pathname === to ? "activeBar" : "inActiveBar"
                           }
+                          style={{
+                          }}
                         >
                           {label}
                         </span>
