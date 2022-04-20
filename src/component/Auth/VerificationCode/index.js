@@ -40,7 +40,7 @@ const Verification = () => {
 
     const onClickResend = () => {
         if (resendEnable) {
-            let currentDate = moment().utcOffset('+05:30').format("DD-MM-YYYY hh:mm:ss")
+            let currentDate = moment().utcOffset('+05:30').format("MM-DD-YYYY HH:mm:ss")
             request({
                 url: endponts.Endpoints.forgotPassword,
                 method: endponts.APIMethods.POST,
