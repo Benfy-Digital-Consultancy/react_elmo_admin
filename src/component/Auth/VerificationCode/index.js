@@ -86,7 +86,7 @@ const Verification = () => {
     };
 
     const onSubmit = (inputs) => {
-        let currentDate = moment().utcOffset('+05:30').format("DD-MM-YYYY hh:mm:ss")
+        let currentDate = moment().utcOffset('+05:30').format("MM-DD-YYYY HH:mm:ss")
         request({
             url: endponts.Endpoints.verifyOTP,
             method: endponts.APIMethods.POST,
