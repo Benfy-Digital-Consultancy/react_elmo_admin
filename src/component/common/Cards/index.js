@@ -29,7 +29,7 @@ const Cards = (props) => {
                             <BiUserCheck size={25} color="#5F2EEA" />
                         </div>
                         <div className="ml-3">
-                            <label className="font-bold-14 mt-2 total_user">Total User</label>
+                            <label className="font-bold-14 mt-2 total_user">Total Co-Admin</label>
                             <h6 className="font-bold-21 user_count ">{props?.data?.user?.count}</h6>
                             <div>
                                 {

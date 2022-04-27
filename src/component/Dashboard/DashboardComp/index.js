@@ -15,7 +15,9 @@ const DashboardComp = (props) => {
   const [tableData, setTableData] = useState([]);
   const [cardData, setCardData] = useState({});
   const [chartData, setChartData] = useState({});
+  const [studentChartData, setStudentChartData] = useState({});
   const [dateSelect, setDateSelect] = useState("This Week");
+  const [studentDate, setStudentDate] = useState("This Week");
 
 
   useEffect(() => {
@@ -86,6 +88,58 @@ const DashboardComp = (props) => {
 
 
 
+
+  useEffect(() => {
+
+    let fromDate = ""
+    let toDate = ""
+    var currentDate = new Date();
+    var oneWeekAgo = new Date();
+    currentDate.setDate(currentDate.getDate() + 1)
+    switch (dateSelect) {
+      case 'This Week': {
+        oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+        break;
+      }
+      case 'This Month': {
+        oneWeekAgo.setMonth(oneWeekAgo.getMonth() - 1);
+        break;
+      }
+      case 'This Year': {
+        oneWeekAgo.setFullYear(oneWeekAgo.getFullYear() - 1);
+        break;
+      }
+
+    }
+    fromDate = moment(oneWeekAgo).format("YYYY-MM-DD");
+    toDate = moment(currentDate).format("YYYY-MM-DD");;
+
+    request({
+      url: endponts.Endpoints.studentTeacherAnalytics + "?fromDate=" + fromDate + "&toDate=" + toDate,
+      method: endponts.APIMethods.GET,
+    }).then(response => {
+      let { data } = response.data;
+      console.log(data);
+      let labels = [];
+      let series = [];
+
+      let item = data ? data : [];
+
+      item.forEach(element => {
+        labels.push(element.userRole);
+        series.push(element.count);
+      });
+      let chartItem = {
+        options: {
+          labels: labels
+        },
+        series: series
+      }
+      setStudentChartData(chartItem)
+    })
+  }, [studentDate])
+
+
   return (
     <>
       <div className="dashboard-title font-bold-28">Dashboard</div>
@@ -93,11 +147,22 @@ const DashboardComp = (props) => {
         <Cards
           data={cardData} />
       </div>
-      <div>
+      <div className='row mt-5'>
+        <div className="col-6">
+          <ChartComponent
+            title={'Type of Education Board'}
+            onChange={(e) => setDateSelect(e)}
+            data={chartData} />
+        </div>
+        <div className="col-6" style={{
+          marginLeft:-100
+        }}>
+          <ChartComponent
+            title={'Total Students and Teachers'}
+            onChange={(e) => setStudentDate(e)}
+            data={studentChartData} />
+        </div>
 
-        <ChartComponent
-          onChange={(e) => setDateSelect(e)}
-          data={chartData} />
       </div>
 
       <div>
@@ -116,7 +181,7 @@ const DashboardComp = (props) => {
                 }}>{index + 1}</td>
                 <td align="left">{item.schoolId}</td>
                 <td align="center" style={{
-                  paddingRight:70
+                  paddingRight: 70
                 }}>
                   <img
                     className="profile_pic"

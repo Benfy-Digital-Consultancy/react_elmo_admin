@@ -10,16 +10,10 @@ const ChartComponent = (props) => {
     return (
         <div>
             <div className='row mb-3'>
-                <div className='col-6'>
+                <div className='col-10'>
                     <div className='chart_header'>
                         <div className="chart_title">
-                            <label className="font-bold-18">Type of Education Board</label>
-                            {/* <SelectFilter
-                                optionOne="This Week"
-                                optionTwo="This Month"
-                                optionThree="This Year"
-                            /> */}
-
+                            <label className="font-bold-18">{props?.title}</label>
                             <div className='select_dropdown'>
                                 <Select
                                     onChange={(e)=> (props && props?.onChange) ? props?.onChange(e) : {}}

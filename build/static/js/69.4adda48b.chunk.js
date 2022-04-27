@@ -1,0 +1,2 @@
+(this.webpackJsonpelmo=this.webpackJsonpelmo||[]).push([[69],{252:function(n,t,e){"use strict";e.r(t);var o=e(69),c=e(70),s=e(0),i=function(){function n(){Object(o.a)(this,n),this.components={}}return Object(c.a)(n,[{key:"addComponent",value:function(n,t){this.components[t]||(this.components[t]=Object(s.lazy)((function(){return e(236)("./".concat(n))})))}},{key:"getComponent",value:function(n){return this.components[n]}}]),n}();t.default=new i}}]);
+//# sourceMappingURL=69.4adda48b.chunk.js.map

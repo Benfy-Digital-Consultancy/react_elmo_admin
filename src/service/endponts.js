@@ -9,6 +9,7 @@ const Endpoints = {
     //Dashboard
     commonDashboard:'/dashboard/admin/commonDashboard',
     boardOnboardAnalytics:'/dashboard/admin/boardOnboardAnalytics',
+    studentTeacherAnalytics:'/dashboard/admin/studentTeacherAnalytics',
     
     //User Module
     userLists:'/user/admin/subAdminList',
