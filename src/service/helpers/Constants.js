@@ -97,5 +97,5 @@ export const SchoolOnBoardHeader = [
 ];
 
 export const strings = {
-  elmo: 'Elmo'
+  elmo: 'Arki'
 }
