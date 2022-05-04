@@ -9,14 +9,14 @@ const Cards = (props) => {
 
 
     const getPercentage = (data) => {
-        if(data?.variationInPercentage < 0){
-            return parseFloat(data?.variationInPercentage.toString().substring(1,data?.variationInPercentage?.toString().length)).toFixed(2)
-        }else{
-            return data?.variationInPercentage.toFixed(2);
+        if (data && data?.variationInPercentage && data?.variationInPercentage < 0) {
+            return parseFloat(data?.variationInPercentage.toString().substring(1, data?.variationInPercentage?.toString().length)).toFixed(2)
+        } else {
+            return (data && data?.variationInPercentage) ? data?.variationInPercentage?.toFixed(2) : 0.00;
         }
     }
 
-    const checkStatus = (data) =>{
+    const checkStatus = (data) => {
         console.log(props?.data);
         return data?.variationInPercentage >= 0;
     }
@@ -33,11 +33,11 @@ const Cards = (props) => {
                             <h6 className="font-bold-21 user_count ">{props?.data?.user?.count}</h6>
                             <div>
                                 {
-                                    checkStatus(props?.data?.user) ? 
-                                    <span><AiOutlineRise color="228B22" /></span> :
-                                    <span><AiOutlineFall color="FC476E" /></span>
+                                    checkStatus(props?.data?.user) ?
+                                        <span><AiOutlineRise color="228B22" /></span> :
+                                        <span><AiOutlineFall color="FC476E" /></span>
                                 }
-                               
+
                                 <span className={checkStatus(props?.data?.user) ? "count_number" : "count_number_two"}>{getPercentage(props?.data?.user)}%</span>
                                 <span className="month">Last Month</span>
                             </div>
@@ -54,10 +54,10 @@ const Cards = (props) => {
                             <label className="font-bold-14 mt-2 total_user">Total School </label>
                             <h6 className="font-bold-21 user_count ">{props?.data?.school?.count}</h6>
                             <div>
-                            {
-                                    checkStatus(props?.data?.school) ? 
-                                    <span><AiOutlineRise color="228B22" /></span> :
-                                    <span><AiOutlineFall color="FC476E" /></span>
+                                {
+                                    checkStatus(props?.data?.school) ?
+                                        <span><AiOutlineRise color="228B22" /></span> :
+                                        <span><AiOutlineFall color="FC476E" /></span>
                                 }
                                 <span className={checkStatus(props?.data?.school) ? "count_number" : "count_number_two"}>{getPercentage(props?.data?.school)}%</span>
                                 <span className="month">Last Month</span>
