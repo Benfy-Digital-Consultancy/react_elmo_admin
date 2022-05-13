@@ -28,12 +28,13 @@ const ChartComponent = (props) => {
                         </div>
                         <div className="blank" />
                         <div className="donut mt-1">
+                            {console.log(props?.data,'props?.data')}
                             {
-                                props?.data && <Chart
+                                props?.data && props?.data?.series && props?.data?.series?.length > 0 ? <Chart
                                     options={props?.data?.options ? props?.data?.options : {}}
                                     series={props?.data?.series ? props?.data?.series : []}
                                     type="donut"
-                                    width="350" />
+                                    width="350" /> : <p className='noData'>No Data</p>
                             }
 
                         </div>
