@@ -26,10 +26,25 @@ const CreateSchoolUser = (props) => {
 
     const [schoolLogo, setSchoolLogoFile] = useState(null);
     const [schoolFileName, setSchoolFileName] = useState("");
-    const [isFileUploaded, setIsFileUploaded] = useState(false)
     const [schoolFile, setSchoolFile] = useState("");
+    const [isFileUploaded, setIsFileUploaded] = useState(false)
+
+
+    const [schoolBanner, setSchoolBanner] = useState(null);
+    const [schoolBannerName, setSchoolBannerName] = useState("");
+    const [schoolBannerFile, setSchoolBannerFile] = useState("");
+
+    const [isBannerUpload, setIsBannerUpload] = useState(false)
+
+
+
+
     const [formStatus, setFormStatus] = useState(false)
     const inputRef = useRef()
+    const inputBannerRef = useRef()
+
+
+
 
     const [schoolName, setSchoolName] = useState("");
     const [schoolId, setSchoolId] = useState("");
@@ -76,23 +91,37 @@ const CreateSchoolUser = (props) => {
         setMobileNumber(item.mobileNumber);
         setSchoolAddress(item.schoolAddress);
         setSchoolUniqueId(item.uniqueUserID);
+        
         setSchoolLogoFile(item.profilePicture);
-        setSchoolFileName(item.originalFileName)
+        setSchoolFileName(item.originalFileName);
+
+        setSchoolBannerName(item.originalSchoolBannerName);
+        setSchoolBanner(item?.schoolBanner)
     }
 
 
 
 
-    const onChangeFiles = (callback) => {
+    const onChangeFiles = (callback,status) => {
         const data = new FormData();
-        data.append('fileKey', schoolFile);
+
+        console.log(schoolBanner,'status');
+        if(status){
+            data.append('fileKey', schoolFile);
+        }else{
+            data.append('fileKey', schoolBannerFile);
+        }
 
         requestMultipart({
             url: endponts.Endpoints.upload,
             method: endponts.APIMethods.POST,
             data: data
         }).then(res => {
-            setSchoolFileName(res.data.orinalName);
+            if(status){
+                setSchoolFileName(res.data.orinalName);
+            }else{
+                setSchoolBannerName(res.data.orinalName)
+            }
             callback(res.data.orinalName)
 
         })
@@ -110,28 +139,37 @@ const CreateSchoolUser = (props) => {
         }
 
         if (isFileUploaded) {
-            onChangeFiles((fileName) => {
-
-                handleOnSubmit(inputs, fileName)
-            })
-
+            onChangeFiles((schoolLogo) => {
+                if (isBannerUpload) {
+                    onChangeFiles((schoolBanner) => {
+                        handleOnSubmit(inputs, schoolLogo,schoolBanner)
+                    },false);
+                }else{
+                    handleOnSubmit(inputs, schoolLogo,schoolBannerName)
+                }
+            },true);
         } else {
-            handleOnSubmit(inputs, schoolFileName)
+            if (isBannerUpload) {
+                onChangeFiles((schoolBanner) => {
+                    handleOnSubmit(inputs,schoolFileName, schoolBanner)
+                },false)
+            } else {
+                handleOnSubmit(inputs, schoolFileName,schoolBannerName)
+            }
         }
-
-
     }
 
-    const handleOnSubmit = (inputs, fileName) => {
+    const handleOnSubmit = (inputs, schoolLogo,schoolBanner) => {
         if (formStatus) {
-            onEditUser(inputs, fileName);
+            onEditUser(inputs, schoolLogo,schoolBanner);
             return
         }
         let data = {
             ...inputs,
             schoolBoard,
             countryCode: "+91",
-            profilePicture: fileName
+            profilePicture: schoolLogo,
+            schoolBanner:schoolBanner
         };
 
         request({
@@ -145,14 +183,15 @@ const CreateSchoolUser = (props) => {
     }
 
 
-    const onEditUser = (inputs, fileName) => {
+    const onEditUser = (inputs, schoolLogo,schoolBanner) => {
         delete inputs["email"];
         let data = {
             ...inputs,
             schoolBoard,
             countryCode: "+91",
             uniqueUserID: schoolUniqueId,
-            profilePicture: fileName
+            profilePicture: schoolLogo,
+            schoolBanner:schoolBanner
         }
         request({
             url: endponts.Endpoints.updateSchool,
@@ -174,6 +213,19 @@ const CreateSchoolUser = (props) => {
         }.bind(this);
         setIsFileUploaded(true)
     }
+
+
+    const handleChangeBanner = (e) => {
+        let file = e.target.files[0];
+        setSchoolBannerFile(file)
+        var reader = new FileReader();
+        var url = reader.readAsDataURL(file);
+        reader.onloadend = function (e) {
+            setSchoolBanner([reader.result]);
+        }.bind(this);
+        setIsBannerUpload(true)
+    }
+
 
 
     return (
@@ -312,6 +364,35 @@ const CreateSchoolUser = (props) => {
                                     schoolLogo && <img
                                         className="school_logo"
                                         src={schoolLogo} />
+
+                                }
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div className="row pt-4">
+                        <div className="col-6">
+                            <label className="font-regular-16">Upload School Banner <span className="extensions">PNG/JPG</span></label>
+                            <FileUploadButton
+                                register={inputBannerRef}
+                                style={{
+                                    display: 'none'
+                                }}
+                                onChange={(e) => handleChangeBanner(e)} />
+                            <div className="flexRow">
+
+                                <div
+                                    className="outlineButton upload_button"
+                                    onClick={() => inputBannerRef.current.click()}>
+                                    <p className="upload_text">Upload</p>
+                                </div>
+
+                                {
+                                    schoolBanner && <img
+                                        className="school_banner"
+                                        src={schoolBanner} />
 
                                 }
                             </div>
